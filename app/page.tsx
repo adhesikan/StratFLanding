@@ -109,37 +109,6 @@ const pricingDetails = [
   "Onboarding support"
 ];
 
-const signals = [
-  {
-    symbol: "AAPL",
-    setup: "Breakout continuation",
-    trigger: "Above 50-day range",
-    risk: "Earnings in 8 days",
-    status: "Watching"
-  },
-  {
-    symbol: "NVDA",
-    setup: "Pullback reset",
-    trigger: "VWAP reclaim",
-    risk: "Wide ATR",
-    status: "Alert sent"
-  },
-  {
-    symbol: "MSFT",
-    setup: "Trend squeeze",
-    trigger: "Higher low",
-    risk: "Sector rotation",
-    status: "Watching"
-  },
-  {
-    symbol: "TSLA",
-    setup: "Gap fill",
-    trigger: "Open range hold",
-    risk: "High beta",
-    status: "Alert sent"
-  }
-];
-
 const bundleDetails = [
   ...pricingDetails,
   "Access to all 8 packages",
@@ -306,31 +275,13 @@ export default function Home() {
                   </span>
                 </div>
                 <div className="mt-6 overflow-hidden rounded-2xl border border-slate-200">
-                  <div className="grid grid-cols-[1fr_1.5fr_1.5fr_1.5fr_1fr] gap-3 bg-gradient-to-r from-indigo-50 via-white to-rose-50 px-4 py-3 text-xs font-semibold uppercase tracking-wide text-slate-500">
-                    <span>Symbol</span>
-                    <span>Setup</span>
-                    <span>Trigger</span>
-                    <span>Risk notes</span>
-                    <span>Status</span>
-                  </div>
-                  <div className="divide-y divide-slate-200 text-sm">
-                    {signals.map((signal) => (
-                      <div
-                        key={signal.symbol}
-                        className="grid grid-cols-[1fr_1.5fr_1.5fr_1.5fr_1fr] gap-3 px-4 py-4"
-                      >
-                        <span className="font-semibold text-slate-900">
-                          {signal.symbol}
-                        </span>
-                        <span className="text-slate-600">{signal.setup}</span>
-                        <span className="text-slate-600">{signal.trigger}</span>
-                        <span className="text-slate-500">{signal.risk}</span>
-                        <span className="text-xs font-semibold text-emerald-700">
-                          {signal.status === "Alert sent" ? "Push alert sent" : "Watching"}
-                        </span>
-                      </div>
-                    ))}
-                  </div>
+                  <Image
+                    src="/alertsdashboard.png"
+                    alt="Alerts dashboard preview"
+                    width={900}
+                    height={600}
+                    className="h-auto w-full object-cover"
+                  />
                 </div>
                 <p className="mt-4 text-xs text-slate-500">
                   Illustrative dashboard layout. Educational signals only.
