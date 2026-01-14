@@ -423,6 +423,18 @@ export default function Home() {
               description="We test strategy rules on historical data to help you understand how setups behaved in the past. No promises, just disciplined analysis."
               align="center"
             />
+            <div className="mt-10 overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-soft">
+              <Image
+                src="/performance.png"
+                alt="Illustrative backtest performance chart"
+                width={1200}
+                height={675}
+                className="h-auto w-full object-cover"
+              />
+            </div>
+            <p className="mt-4 text-center text-xs font-semibold uppercase tracking-[0.3em] text-slate-500">
+              Sample performance snapshot
+            </p>
             <div className="mt-12 grid gap-6 md:grid-cols-3">
               {[
                 { label: "Win rate", value: "Example / Illustrative" },
