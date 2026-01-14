@@ -23,9 +23,9 @@ const trustBullets = [
 
 const steps = [
   {
-    title: "Pick a strategy bundle or watchlist",
+    title: "Pick a strategy bundle",
     description:
-      "Choose the rule sets and watchlists that align with your timeframe and market focus."
+      "Choose the rule sets that align with your timeframe and market focus."
   },
   {
     title: "Receive dashboard signals + push alerts",
@@ -40,10 +40,6 @@ const steps = [
 ];
 
 const featureCards = [
-  {
-    title: "Curated stock watchlists",
-    description: "Stay focused on the tickers and themes most relevant to each strategy."
-  },
   {
     title: "Rule-based entries/exits",
     description:
@@ -330,45 +326,11 @@ export default function Home() {
                     <span className="font-semibold text-accent-600">Scheduled</span>
                   </div>
                   <p className="mt-2 text-xs text-slate-500">
-                    Summary email with setups, watchlists, and risk context.
+                    Summary email with setups and risk context.
                   </p>
                 </div>
               </div>
             </div>
-          </Container>
-        </section>
-
-        <section id="backtesting" className="py-20">
-          <Container>
-            <SectionHeading
-              eyebrow="Backtesting clarity"
-              title="Backtested strategy rules with transparent context"
-              description="We test strategy rules on historical data to help you understand how setups behaved in the past. No promises, just disciplined analysis."
-              align="center"
-            />
-            <div className="mt-12 grid gap-6 md:grid-cols-3">
-              {[
-                { label: "Win rate", value: "Example / Illustrative" },
-                { label: "Avg. hold time", value: "Example / Illustrative" },
-                { label: "Max drawdown", value: "Example / Illustrative" }
-              ].map((metric) => (
-                <div
-                  key={metric.label}
-                  className="rounded-2xl border border-white/70 bg-white/80 p-6 text-center shadow-soft backdrop-blur"
-                >
-                  <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">
-                    {metric.label}
-                  </p>
-                  <p className="mt-4 text-lg font-semibold text-slate-900">
-                    {metric.value}
-                  </p>
-                  <p className="mt-2 text-xs text-slate-500">Example backtest metric</p>
-                </div>
-              ))}
-            </div>
-            <p className="mt-6 text-center text-sm font-semibold text-slate-500">
-              Historical results do not guarantee future performance.
-            </p>
           </Container>
         </section>
 
