@@ -16,7 +16,7 @@ const CHECKOUT_LINKS = {
 };
 
 const trustBullets = [
-  "Weekly strategy newsletter",
+  "Trade ideas daily",
   "Rules-based signals + alerts",
   "Transparent, backtested methodology"
 ];
@@ -121,7 +121,7 @@ export default function Home() {
     <div className="bg-gradient-to-br from-indigo-50 via-white to-rose-50 text-slate-900">
       <header className="sticky top-0 z-50 border-b border-white/60 bg-white/80 backdrop-blur">
         <Container className="flex items-center justify-between py-4">
-          <div className="text-lg font-semibold text-slate-900">
+          <div className="text-xl font-semibold text-slate-900 sm:text-2xl">
             Strategy Fundamentals
           </div>
           <nav className="hidden items-center gap-6 text-sm font-medium text-slate-700 md:flex">
