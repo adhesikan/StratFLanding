@@ -16,17 +16,9 @@ const CHECKOUT_LINKS = {
 };
 
 const trustBullets = [
-  "Rules-based signals",
-  "Dashboard + push notifications",
-  "Transparent methodology"
-];
-
-const logoPlaceholders = [
-  "Momentum Desk",
-  "EquityForge",
-  "SignalStack",
-  "MarketLens",
-  "QuantPath"
+  "Weekly strategy newsletter",
+  "Rules-based signals + alerts",
+  "Transparent, backtested methodology"
 ];
 
 const steps = [
@@ -148,6 +140,21 @@ const signals = [
   }
 ];
 
+const newsletterHighlights = [
+  {
+    title: "Weekly playbook",
+    description: "A concise market recap with the highest-conviction setups."
+  },
+  {
+    title: "Rules checklist",
+    description: "Entry, exit, and risk notes pulled directly from backtests."
+  },
+  {
+    title: "Watchlist scan",
+    description: "Tickers and themes to monitor into the next session."
+  }
+];
+
 export default function Home() {
   return (
     <div className="bg-white text-slate-900">
@@ -187,29 +194,29 @@ export default function Home() {
           <Container className="fade-up grid items-center gap-12 lg:grid-cols-[1.1fr_0.9fr]">
             <div>
               <p className="text-sm font-semibold uppercase tracking-[0.2em] text-accent-600">
-                Strategy Fundamentals
+                Strategy Fundamentals Newsletter
               </p>
               <h1 className="mt-4 text-4xl font-semibold leading-tight text-slate-900 sm:text-5xl">
-                Stock trade ideas powered by rules-based backtests — delivered to
-                your dashboard + push alerts.
+                A newsletter for rules-based trade ideas, backtested playbooks,
+                and actionable watchlists.
               </h1>
               <p className="mt-5 text-lg text-slate-600">
-                Follow a simple workflow: browse backtested strategy rules, monitor
-                a live dashboard, and receive push notifications when setups
-                trigger. Transparent methodology built for clarity and control.
+                Get the weekly newsletter with backtested strategy rules, live
+                dashboard access, and push notifications when setups trigger.
+                Transparent methodology built for clarity and control.
               </p>
               <div className="mt-8 flex flex-wrap gap-4">
                 <Link
                   href={CHECKOUT_LINKS.trial}
                   className="rounded-full bg-accent-600 px-6 py-3 text-sm font-semibold text-white shadow-soft transition hover:bg-accent-700"
                 >
-                  Start Free Trial
+                  Join the Newsletter
                 </Link>
                 <a
                   href="#how-it-works"
                   className="rounded-full border border-slate-200 px-6 py-3 text-sm font-semibold text-slate-700 transition hover:border-slate-300 hover:text-slate-900"
                 >
-                  See How It Works
+                  Preview the Workflow
                 </a>
               </div>
               <div className="mt-8 flex flex-col gap-2 text-sm text-slate-600">
@@ -235,54 +242,31 @@ export default function Home() {
               <div className="rounded-2xl border border-slate-200 bg-white p-6">
                 <div className="flex items-center justify-between">
                   <p className="text-sm font-semibold text-slate-900">
-                    Today&apos;s Signals
+                    Latest newsletter issue
                   </p>
                   <span className="rounded-full bg-accent-50 px-3 py-1 text-xs font-semibold text-accent-700">
-                    Live dashboard
+                    Weekly drop
                   </span>
                 </div>
                 <div className="mt-6 space-y-4">
-                  {signals.slice(0, 3).map((signal) => (
+                  {newsletterHighlights.map((highlight) => (
                     <div
-                      key={signal.symbol}
+                      key={highlight.title}
                       className="rounded-xl border border-slate-200 p-4"
                     >
-                      <div className="flex items-center justify-between">
-                        <p className="text-sm font-semibold text-slate-900">
-                          {signal.symbol}
-                        </p>
-                        <span className="rounded-full bg-emerald-50 px-3 py-1 text-xs font-semibold text-emerald-700">
-                          {signal.status === "Alert sent"
-                            ? "Push alert sent"
-                            : "Watching"}
-                        </span>
-                      </div>
-                      <p className="mt-2 text-sm text-slate-600">
-                        {signal.setup} • {signal.trigger}
+                      <p className="text-sm font-semibold text-slate-900">
+                        {highlight.title}
                       </p>
-                      <p className="mt-1 text-xs text-slate-500">
-                        Risk note: {signal.risk}
+                      <p className="mt-2 text-sm text-slate-600">
+                        {highlight.description}
                       </p>
                     </div>
                   ))}
                 </div>
                 <p className="mt-6 text-xs text-slate-500">
-                  Educational signals only. No investment advice.
+                  Educational newsletter content only. No investment advice.
                 </p>
               </div>
-            </div>
-          </Container>
-        </section>
-
-        <section className="border-y border-slate-200 bg-slate-50 py-8">
-          <Container className="flex flex-col items-center justify-between gap-6 md:flex-row">
-            <p className="text-sm font-semibold text-slate-600">
-              Trusted by active traders
-            </p>
-            <div className="flex flex-wrap justify-center gap-6 text-sm font-semibold text-slate-400">
-              {logoPlaceholders.map((logo) => (
-                <span key={logo}>{logo}</span>
-              ))}
             </div>
           </Container>
         </section>
