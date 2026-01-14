@@ -160,13 +160,15 @@ export default function Home() {
                 Strategy Fundamentals Newsletter
               </p>
               <h1 className="mt-4 text-4xl font-semibold leading-tight text-slate-900 sm:text-5xl">
-                A colorful, rules-based newsletter packed with backtested playbooks
-                and actionable watchlists.
+                A data-driven trading newsletter powered by historical strategy
+                testing.
               </h1>
               <p className="mt-5 text-lg text-slate-600">
-                Get the weekly newsletter with backtested strategy rules, live
-                dashboard access, and vibrant push notifications when setups
-                trigger. Transparent methodology built for clarity and control.
+                Receive disciplined trade setups and alerts designed to reduce
+                guesswork and emotional trading.
+              </p>
+              <p className="mt-4 text-sm text-slate-500">
+                Past performance does not guarantee future results.
               </p>
               <div className="mt-8 flex flex-wrap gap-4">
                 <Link
