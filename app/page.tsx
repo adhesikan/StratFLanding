@@ -6,8 +6,8 @@ import { Container } from "@/components/Container";
 import { SectionHeading } from "@/components/SectionHeading";
 
 const PRICING = {
-  trialPrice: "$0 / 14 days",
-  bundlePrice: "$29 / month"
+  trialPrice: "$0 / 21 days",
+  bundlePrice: "$157"
 };
 
 const CHECKOUT_LINKS = {
@@ -140,19 +140,11 @@ const signals = [
   }
 ];
 
-const newsletterHighlights = [
-  {
-    title: "Weekly playbook",
-    description: "A concise market recap with the highest-conviction setups."
-  },
-  {
-    title: "Rules checklist",
-    description: "Entry, exit, and risk notes pulled directly from backtests."
-  },
-  {
-    title: "Watchlist scan",
-    description: "Tickers and themes to monitor into the next session."
-  }
+const bundleDetails = [
+  ...pricingDetails,
+  "Access to all 8 packages",
+  "Cancel anytime",
+  "Priority push notifications"
 ];
 
 export default function Home() {
@@ -238,34 +230,6 @@ export default function Home() {
                   className="h-auto w-full object-cover"
                   priority
                 />
-              </div>
-              <div className="rounded-2xl border border-slate-200 bg-white p-6">
-                <div className="flex items-center justify-between">
-                  <p className="text-sm font-semibold text-slate-900">
-                    Latest newsletter issue
-                  </p>
-                  <span className="rounded-full bg-accent-50 px-3 py-1 text-xs font-semibold text-accent-700">
-                    Weekly drop
-                  </span>
-                </div>
-                <div className="mt-6 space-y-4">
-                  {newsletterHighlights.map((highlight) => (
-                    <div
-                      key={highlight.title}
-                      className="rounded-xl border border-slate-200 p-4"
-                    >
-                      <p className="text-sm font-semibold text-slate-900">
-                        {highlight.title}
-                      </p>
-                      <p className="mt-2 text-sm text-slate-600">
-                        {highlight.description}
-                      </p>
-                    </div>
-                  ))}
-                </div>
-                <p className="mt-6 text-xs text-slate-500">
-                  Educational newsletter content only. No investment advice.
-                </p>
               </div>
             </div>
           </Container>
@@ -522,17 +486,16 @@ export default function Home() {
                   {PRICING.bundlePrice}
                 </p>
                 <p className="mt-2 text-sm text-slate-600">
-                  Full access to all strategy bundles and priority alerts.
+                  50% less than subscribing to 8 individual packages, with access to
+                  all 8 packages. Cancel anytime.
                 </p>
                 <ul className="mt-6 space-y-3 text-sm text-slate-600">
-                  {[...pricingDetails, "Priority push notifications"].map(
-                    (item) => (
-                      <li key={item} className="flex items-center gap-2">
-                        <span className="h-2 w-2 rounded-full bg-accent-500"></span>
-                        {item}
-                      </li>
-                    )
-                  )}
+                  {bundleDetails.map((item) => (
+                    <li key={item} className="flex items-center gap-2">
+                      <span className="h-2 w-2 rounded-full bg-accent-500"></span>
+                      {item}
+                    </li>
+                  ))}
                 </ul>
                 <Link
                   href={CHECKOUT_LINKS.bundle}
