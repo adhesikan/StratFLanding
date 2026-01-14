@@ -1,6 +1,5 @@
 "use client";
 
-import { FormEvent, useMemo, useState } from "react";
 import Link from "next/link";
 import { Container } from "@/components/Container";
 import { SectionHeading } from "@/components/SectionHeading";
@@ -11,8 +10,8 @@ const PRICING = {
 };
 
 const CHECKOUT_LINKS = {
-  trial: "#",
-  bundle: "#"
+  trial: "https://www.strategyfundamentals.com/pricing",
+  bundle: "https://www.strategyfundamentals.com/pricing"
 };
 
 const trustBullets = [
@@ -149,55 +148,6 @@ const signals = [
 ];
 
 export default function Home() {
-  const [formState, setFormState] = useState({ name: "", email: "" });
-  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">(
-    "idle"
-  );
-  const [error, setError] = useState<string | null>(null);
-
-  const isEmailValid = useMemo(() => {
-    if (!formState.email) {
-      return false;
-    }
-    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formState.email);
-  }, [formState.email]);
-
-  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    setError(null);
-
-    if (!formState.name.trim()) {
-      setError("Please enter your name.");
-      return;
-    }
-
-    if (!isEmailValid) {
-      setError("Please enter a valid email address.");
-      return;
-    }
-
-    setStatus("loading");
-
-    try {
-      const response = await fetch("/api/lead", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formState)
-      });
-
-      if (!response.ok) {
-        throw new Error("Unable to submit form");
-      }
-
-      setStatus("success");
-      setFormState({ name: "", email: "" });
-    } catch (submitError) {
-      console.error(submitError);
-      setStatus("error");
-      setError("Something went wrong. Please try again.");
-    }
-  };
-
   return (
     <div className="bg-white text-slate-900">
       <header className="sticky top-0 z-50 border-b border-slate-200 bg-white/90 backdrop-blur">
@@ -623,62 +573,23 @@ export default function Home() {
                     recommendations — just clear setups you can evaluate.
                   </p>
                 </div>
-                <form onSubmit={handleSubmit} className="space-y-4">
-                  <div>
-                    <label className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">
-                      Name
-                    </label>
-                    <input
-                      type="text"
-                      name="name"
-                      value={formState.name}
-                      onChange={(event) =>
-                        setFormState((prev) => ({
-                          ...prev,
-                          name: event.target.value
-                        }))
-                      }
-                      className="mt-2 w-full rounded-xl border border-slate-200 px-4 py-3 text-sm text-slate-700 focus:border-accent-500 focus:outline-none focus:ring-2 focus:ring-accent-100"
-                      placeholder="Taylor"
-                    />
-                  </div>
-                  <div>
-                    <label className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">
-                      Email
-                    </label>
-                    <input
-                      type="email"
-                      name="email"
-                      value={formState.email}
-                      onChange={(event) =>
-                        setFormState((prev) => ({
-                          ...prev,
-                          email: event.target.value
-                        }))
-                      }
-                      className="mt-2 w-full rounded-xl border border-slate-200 px-4 py-3 text-sm text-slate-700 focus:border-accent-500 focus:outline-none focus:ring-2 focus:ring-accent-100"
-                      placeholder="you@company.com"
-                    />
-                  </div>
-                  {error ? (
-                    <p className="text-sm font-semibold text-rose-600">{error}</p>
-                  ) : null}
-                  {status === "success" ? (
-                    <p className="text-sm font-semibold text-emerald-600">
-                      Success! Check your inbox for next steps.
-                    </p>
-                  ) : null}
-                  <button
-                    type="submit"
-                    disabled={status === "loading"}
-                    className="flex w-full items-center justify-center rounded-full bg-accent-600 px-6 py-3 text-sm font-semibold text-white shadow-soft transition hover:bg-accent-700 disabled:cursor-not-allowed disabled:opacity-60"
+                <div className="flex flex-col gap-4">
+                  <Link
+                    href={CHECKOUT_LINKS.bundle}
+                    className="inline-flex w-full items-center justify-center rounded-full bg-accent-600 px-6 py-3 text-sm font-semibold text-white shadow-soft transition hover:bg-accent-700"
                   >
-                    {status === "loading" ? "Submitting..." : "Get Started"}
-                  </button>
+                    View Pricing & Plans
+                  </Link>
+                  <Link
+                    href={CHECKOUT_LINKS.trial}
+                    className="inline-flex w-full items-center justify-center rounded-full border border-slate-200 px-6 py-3 text-sm font-semibold text-slate-700 transition hover:border-slate-300 hover:text-slate-900"
+                  >
+                    Start Your Free Trial
+                  </Link>
                   <p className="text-xs text-slate-500">
-                    We&apos;ll only use your email to send educational updates.
+                    Explore pricing to choose the plan that fits your workflow.
                   </p>
-                </form>
+                </div>
               </div>
             </div>
           </Container>
