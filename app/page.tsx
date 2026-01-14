@@ -149,32 +149,32 @@ const bundleDetails = [
 
 export default function Home() {
   return (
-    <div className="bg-white text-slate-900">
-      <header className="sticky top-0 z-50 border-b border-slate-200 bg-white/90 backdrop-blur">
+    <div className="bg-gradient-to-br from-indigo-50 via-white to-rose-50 text-slate-900">
+      <header className="sticky top-0 z-50 border-b border-white/60 bg-white/80 backdrop-blur">
         <Container className="flex items-center justify-between py-4">
           <div className="text-lg font-semibold text-slate-900">
             Strategy Fundamentals
           </div>
-          <nav className="hidden items-center gap-6 text-sm font-medium text-slate-600 md:flex">
-            <a className="hover:text-slate-900" href="#how-it-works">
+          <nav className="hidden items-center gap-6 text-sm font-medium text-slate-700 md:flex">
+            <a className="transition hover:text-accent-600" href="#how-it-works">
               How it Works
             </a>
-            <a className="hover:text-slate-900" href="#dashboard">
+            <a className="transition hover:text-accent-600" href="#dashboard">
               Dashboard
             </a>
-            <a className="hover:text-slate-900" href="#alerts">
+            <a className="transition hover:text-accent-600" href="#alerts">
               Alerts
             </a>
-            <a className="hover:text-slate-900" href="#pricing">
+            <a className="transition hover:text-accent-600" href="#pricing">
               Pricing
             </a>
-            <a className="hover:text-slate-900" href="#faq">
+            <a className="transition hover:text-accent-600" href="#faq">
               FAQ
             </a>
           </nav>
           <Link
             href={CHECKOUT_LINKS.trial}
-            className="rounded-full bg-accent-600 px-4 py-2 text-sm font-semibold text-white shadow-soft transition hover:bg-accent-700"
+            className="rounded-full bg-gradient-to-r from-indigo-600 via-fuchsia-600 to-rose-500 px-4 py-2 text-sm font-semibold text-white shadow-soft transition hover:from-indigo-700 hover:via-fuchsia-600 hover:to-rose-600"
           >
             Start Free Trial
           </Link>
@@ -182,31 +182,33 @@ export default function Home() {
       </header>
 
       <main>
-        <section className="pb-20 pt-16 sm:pt-20">
+        <section className="relative overflow-hidden pb-20 pt-16 sm:pt-20">
+          <div className="pointer-events-none absolute -left-24 top-12 h-72 w-72 rounded-full bg-gradient-to-br from-indigo-400/40 via-fuchsia-300/40 to-amber-300/30 blur-3xl"></div>
+          <div className="pointer-events-none absolute -right-24 top-24 h-80 w-80 rounded-full bg-gradient-to-br from-rose-400/40 via-orange-300/30 to-indigo-300/30 blur-3xl"></div>
           <Container className="fade-up grid items-center gap-12 lg:grid-cols-[1.1fr_0.9fr]">
             <div>
               <p className="text-sm font-semibold uppercase tracking-[0.2em] text-accent-600">
                 Strategy Fundamentals Newsletter
               </p>
               <h1 className="mt-4 text-4xl font-semibold leading-tight text-slate-900 sm:text-5xl">
-                A newsletter for rules-based trade ideas, backtested playbooks,
+                A colorful, rules-based newsletter packed with backtested playbooks
                 and actionable watchlists.
               </h1>
               <p className="mt-5 text-lg text-slate-600">
                 Get the weekly newsletter with backtested strategy rules, live
-                dashboard access, and push notifications when setups trigger.
-                Transparent methodology built for clarity and control.
+                dashboard access, and vibrant push notifications when setups
+                trigger. Transparent methodology built for clarity and control.
               </p>
               <div className="mt-8 flex flex-wrap gap-4">
                 <Link
                   href={CHECKOUT_LINKS.trial}
-                  className="rounded-full bg-accent-600 px-6 py-3 text-sm font-semibold text-white shadow-soft transition hover:bg-accent-700"
+                  className="rounded-full bg-gradient-to-r from-indigo-600 via-fuchsia-600 to-rose-500 px-6 py-3 text-sm font-semibold text-white shadow-soft transition hover:from-indigo-700 hover:via-fuchsia-600 hover:to-rose-600"
                 >
                   Join the Newsletter
                 </Link>
                 <a
                   href="#how-it-works"
-                  className="rounded-full border border-slate-200 px-6 py-3 text-sm font-semibold text-slate-700 transition hover:border-slate-300 hover:text-slate-900"
+                  className="rounded-full border border-white/70 bg-white/60 px-6 py-3 text-sm font-semibold text-slate-700 shadow-sm transition hover:border-indigo-200 hover:text-slate-900"
                 >
                   Preview the Workflow
                 </a>
@@ -214,14 +216,14 @@ export default function Home() {
               <div className="mt-8 flex flex-col gap-2 text-sm text-slate-600">
                 {trustBullets.map((bullet) => (
                   <div key={bullet} className="flex items-center gap-2">
-                    <span className="inline-flex h-2 w-2 rounded-full bg-accent-500"></span>
+                    <span className="inline-flex h-2 w-2 rounded-full bg-gradient-to-r from-indigo-500 to-rose-500"></span>
                     <span>{bullet}</span>
                   </div>
                 ))}
               </div>
             </div>
-            <div className="rounded-3xl border border-slate-200 bg-slate-50 p-6 shadow-soft">
-              <div className="mb-6 overflow-hidden rounded-2xl border border-slate-200 bg-white">
+            <div className="rounded-3xl border border-white/70 bg-white/70 p-6 shadow-soft backdrop-blur">
+              <div className="mb-6 overflow-hidden rounded-2xl border border-white/70 bg-white shadow-sm">
                 <Image
                   src="/happytrader.png"
                   alt="Trader reviewing signals on a dashboard"
@@ -237,7 +239,7 @@ export default function Home() {
 
         <section className="py-20">
           <Container>
-            <div className="overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-soft">
+            <div className="overflow-hidden rounded-3xl border border-white/70 bg-white shadow-soft">
               <Image
                 src="/performance.png"
                 alt="Illustrative backtest performance chart"
@@ -263,7 +265,7 @@ export default function Home() {
               {steps.map((step, index) => (
                 <div
                   key={step.title}
-                  className="rounded-2xl border border-slate-200 bg-white p-6 shadow-soft"
+                  className="rounded-2xl border border-white/70 bg-white/80 p-6 shadow-soft backdrop-blur"
                 >
                   <div className="flex h-10 w-10 items-center justify-center rounded-full bg-accent-50 text-sm font-semibold text-accent-700">
                     0{index + 1}
@@ -280,7 +282,10 @@ export default function Home() {
           </Container>
         </section>
 
-        <section id="dashboard" className="bg-slate-50 py-20">
+        <section
+          id="dashboard"
+          className="bg-gradient-to-b from-indigo-50 via-white to-rose-50 py-20"
+        >
           <Container>
             <div className="grid gap-10 lg:grid-cols-[1fr_1.1fr]">
               <div className="flex flex-col justify-center">
@@ -289,11 +294,11 @@ export default function Home() {
                   title="Everything in one signal-focused workspace"
                   description="Track active setups, review risk notes, and see alert status in one glance. Designed for fast decisions and clean data hygiene."
                 />
-                <div className="mt-6 rounded-2xl border border-accent-100 bg-accent-50/60 p-4 text-sm text-accent-700">
+                <div className="mt-6 rounded-2xl border border-indigo-200/70 bg-white/80 p-4 text-sm text-indigo-700 shadow-sm">
                   PWA + push notifications supported for desktop and mobile alerts.
                 </div>
               </div>
-              <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-soft">
+              <div className="rounded-3xl border border-white/70 bg-white p-6 shadow-soft">
                 <div className="flex items-center justify-between text-sm font-semibold text-slate-600">
                   <span>Signals dashboard</span>
                   <span className="rounded-full bg-emerald-50 px-3 py-1 text-xs font-semibold text-emerald-700">
@@ -301,7 +306,7 @@ export default function Home() {
                   </span>
                 </div>
                 <div className="mt-6 overflow-hidden rounded-2xl border border-slate-200">
-                  <div className="grid grid-cols-[1fr_1.5fr_1.5fr_1.5fr_1fr] gap-3 bg-slate-50 px-4 py-3 text-xs font-semibold uppercase tracking-wide text-slate-500">
+                  <div className="grid grid-cols-[1fr_1.5fr_1.5fr_1.5fr_1fr] gap-3 bg-gradient-to-r from-indigo-50 via-white to-rose-50 px-4 py-3 text-xs font-semibold uppercase tracking-wide text-slate-500">
                     <span>Symbol</span>
                     <span>Setup</span>
                     <span>Trigger</span>
@@ -349,8 +354,8 @@ export default function Home() {
                   do not constitute investment advice.
                 </p>
               </div>
-              <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-soft">
-                <div className="rounded-2xl border border-slate-200 bg-slate-50 p-5">
+              <div className="rounded-3xl border border-white/70 bg-white p-6 shadow-soft">
+                <div className="rounded-2xl border border-indigo-100/80 bg-gradient-to-br from-indigo-50 via-white to-rose-50 p-5">
                   <div className="flex items-center justify-between">
                     <p className="text-sm font-semibold text-slate-900">
                       Alert Center
@@ -366,7 +371,7 @@ export default function Home() {
                     Rule-based alert. Review risk notes before acting.
                   </p>
                 </div>
-                <div className="mt-4 rounded-2xl border border-slate-200 p-5">
+                <div className="mt-4 rounded-2xl border border-slate-200 bg-white p-5">
                   <div className="flex items-center justify-between text-sm text-slate-600">
                     <span>Daily digest</span>
                     <span className="font-semibold text-accent-600">Scheduled</span>
@@ -396,7 +401,7 @@ export default function Home() {
               ].map((metric) => (
                 <div
                   key={metric.label}
-                  className="rounded-2xl border border-slate-200 bg-white p-6 text-center shadow-soft"
+                  className="rounded-2xl border border-white/70 bg-white/80 p-6 text-center shadow-soft backdrop-blur"
                 >
                   <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">
                     {metric.label}
@@ -414,7 +419,7 @@ export default function Home() {
           </Container>
         </section>
 
-        <section className="bg-slate-50 py-20">
+        <section className="bg-gradient-to-b from-rose-50 via-white to-indigo-50 py-20">
           <Container>
             <SectionHeading
               eyebrow="Features"
@@ -425,7 +430,7 @@ export default function Home() {
               {featureCards.map((feature) => (
                 <div
                   key={feature.title}
-                  className="rounded-2xl border border-slate-200 bg-white p-6 shadow-soft"
+                  className="rounded-2xl border border-white/70 bg-white/80 p-6 shadow-soft backdrop-blur"
                 >
                   <h3 className="text-lg font-semibold text-slate-900">
                     {feature.title}
@@ -448,7 +453,7 @@ export default function Home() {
               align="center"
             />
             <div className="mt-12 grid gap-6 lg:grid-cols-2">
-              <div className="rounded-3xl border border-slate-200 bg-white p-8 shadow-soft">
+              <div className="rounded-3xl border border-white/70 bg-white/80 p-8 shadow-soft backdrop-blur">
                 <p className="text-sm font-semibold uppercase tracking-[0.2em] text-slate-500">
                   Trial
                 </p>
@@ -468,47 +473,49 @@ export default function Home() {
                 </ul>
                 <Link
                   href={CHECKOUT_LINKS.trial}
-                  className="mt-8 inline-flex w-full items-center justify-center rounded-full border border-slate-200 px-6 py-3 text-sm font-semibold text-slate-700 transition hover:border-slate-300 hover:text-slate-900"
+                  className="mt-8 inline-flex w-full items-center justify-center rounded-full border border-indigo-200 bg-white/70 px-6 py-3 text-sm font-semibold text-indigo-700 transition hover:border-indigo-300 hover:text-indigo-800"
                 >
                   Start Free Trial
                 </Link>
               </div>
-              <div className="rounded-3xl border border-accent-200 bg-white p-8 shadow-soft">
-                <div className="flex items-center justify-between">
-                  <p className="text-sm font-semibold uppercase tracking-[0.2em] text-accent-600">
-                    Bundle
+              <div className="rounded-3xl border border-transparent bg-gradient-to-br from-indigo-600 via-fuchsia-600 to-rose-500 p-[1px] shadow-soft">
+                <div className="rounded-[22px] bg-white/90 p-8">
+                  <div className="flex items-center justify-between">
+                    <p className="text-sm font-semibold uppercase tracking-[0.2em] text-accent-600">
+                      Bundle
+                    </p>
+                    <span className="rounded-full bg-accent-50 px-3 py-1 text-xs font-semibold text-accent-700">
+                      Most popular
+                    </span>
+                  </div>
+                  <p className="mt-4 text-4xl font-semibold text-slate-900">
+                    {PRICING.bundlePrice}
                   </p>
-                  <span className="rounded-full bg-accent-50 px-3 py-1 text-xs font-semibold text-accent-700">
-                    Most popular
-                  </span>
+                  <p className="mt-2 text-sm text-slate-600">
+                    50% less than subscribing to 8 individual packages, with access to
+                    all 8 packages. Cancel anytime.
+                  </p>
+                  <ul className="mt-6 space-y-3 text-sm text-slate-600">
+                    {bundleDetails.map((item) => (
+                      <li key={item} className="flex items-center gap-2">
+                        <span className="h-2 w-2 rounded-full bg-gradient-to-r from-indigo-500 to-rose-500"></span>
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                  <Link
+                    href={CHECKOUT_LINKS.bundle}
+                    className="mt-8 inline-flex w-full items-center justify-center rounded-full bg-gradient-to-r from-indigo-600 via-fuchsia-600 to-rose-500 px-6 py-3 text-sm font-semibold text-white shadow-soft transition hover:from-indigo-700 hover:via-fuchsia-600 hover:to-rose-600"
+                  >
+                    Subscribe to Bundle
+                  </Link>
                 </div>
-                <p className="mt-4 text-4xl font-semibold text-slate-900">
-                  {PRICING.bundlePrice}
-                </p>
-                <p className="mt-2 text-sm text-slate-600">
-                  50% less than subscribing to 8 individual packages, with access to
-                  all 8 packages. Cancel anytime.
-                </p>
-                <ul className="mt-6 space-y-3 text-sm text-slate-600">
-                  {bundleDetails.map((item) => (
-                    <li key={item} className="flex items-center gap-2">
-                      <span className="h-2 w-2 rounded-full bg-accent-500"></span>
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-                <Link
-                  href={CHECKOUT_LINKS.bundle}
-                  className="mt-8 inline-flex w-full items-center justify-center rounded-full bg-accent-600 px-6 py-3 text-sm font-semibold text-white shadow-soft transition hover:bg-accent-700"
-                >
-                  Subscribe to Bundle
-                </Link>
               </div>
             </div>
           </Container>
         </section>
 
-        <section id="faq" className="bg-slate-50 py-20">
+        <section id="faq" className="bg-gradient-to-b from-indigo-50 via-white to-rose-50 py-20">
           <Container>
             <SectionHeading
               eyebrow="FAQ"
@@ -519,7 +526,7 @@ export default function Home() {
               {faqs.map((faq) => (
                 <div
                   key={faq.question}
-                  className="rounded-2xl border border-slate-200 bg-white p-6"
+                  className="rounded-2xl border border-white/70 bg-white/80 p-6 shadow-soft backdrop-blur"
                 >
                   <h3 className="text-base font-semibold text-slate-900">
                     {faq.question}
@@ -533,7 +540,7 @@ export default function Home() {
 
         <section className="py-20">
           <Container>
-            <div className="rounded-3xl border border-slate-200 bg-white p-10 shadow-soft lg:p-12">
+            <div className="rounded-3xl border border-white/70 bg-white/80 p-10 shadow-soft backdrop-blur lg:p-12">
               <div className="grid gap-10 lg:grid-cols-[1.2fr_0.8fr]">
                 <div>
                   <p className="text-sm font-semibold uppercase tracking-[0.2em] text-accent-600">
@@ -551,13 +558,13 @@ export default function Home() {
                 <div className="flex flex-col gap-4">
                   <Link
                     href={CHECKOUT_LINKS.bundle}
-                    className="inline-flex w-full items-center justify-center rounded-full bg-accent-600 px-6 py-3 text-sm font-semibold text-white shadow-soft transition hover:bg-accent-700"
+                    className="inline-flex w-full items-center justify-center rounded-full bg-gradient-to-r from-indigo-600 via-fuchsia-600 to-rose-500 px-6 py-3 text-sm font-semibold text-white shadow-soft transition hover:from-indigo-700 hover:via-fuchsia-600 hover:to-rose-600"
                   >
                     View Pricing & Plans
                   </Link>
                   <Link
                     href={CHECKOUT_LINKS.trial}
-                    className="inline-flex w-full items-center justify-center rounded-full border border-slate-200 px-6 py-3 text-sm font-semibold text-slate-700 transition hover:border-slate-300 hover:text-slate-900"
+                    className="inline-flex w-full items-center justify-center rounded-full border border-indigo-200 bg-white/70 px-6 py-3 text-sm font-semibold text-indigo-700 transition hover:border-indigo-300 hover:text-indigo-800"
                   >
                     Start Your Free Trial
                   </Link>
@@ -571,9 +578,9 @@ export default function Home() {
         </section>
       </main>
 
-      <footer className="border-t border-slate-200 bg-slate-50 py-12">
+      <footer className="border-t border-white/70 bg-gradient-to-b from-white to-indigo-50 py-12">
         <Container>
-          <div className="flex flex-col justify-between gap-6 border-b border-slate-200 pb-8 md:flex-row md:items-center">
+          <div className="flex flex-col justify-between gap-6 border-b border-white/70 pb-8 md:flex-row md:items-center">
             <div>
               <p className="text-lg font-semibold text-slate-900">
                 Strategy Fundamentals
@@ -583,13 +590,13 @@ export default function Home() {
               </p>
             </div>
             <div className="flex flex-wrap gap-4 text-sm font-semibold text-slate-600">
-              <a href="#" className="hover:text-slate-900">
+              <a href="#" className="transition hover:text-accent-600">
                 Terms
               </a>
-              <a href="#" className="hover:text-slate-900">
+              <a href="#" className="transition hover:text-accent-600">
                 Privacy
               </a>
-              <a href="#" className="hover:text-slate-900">
+              <a href="#" className="transition hover:text-accent-600">
                 Disclosures
               </a>
             </div>
