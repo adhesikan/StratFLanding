@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { Container } from "@/components/Container";
 import { SectionHeading } from "@/components/SectionHeading";
@@ -221,6 +222,16 @@ export default function Home() {
               </div>
             </div>
             <div className="rounded-3xl border border-slate-200 bg-slate-50 p-6 shadow-soft">
+              <div className="mb-6 overflow-hidden rounded-2xl border border-slate-200 bg-white">
+                <Image
+                  src="/happytrader.png"
+                  alt="Trader reviewing signals on a dashboard"
+                  width={640}
+                  height={420}
+                  className="h-auto w-full object-cover"
+                  priority
+                />
+              </div>
               <div className="rounded-2xl border border-slate-200 bg-white p-6">
                 <div className="flex items-center justify-between">
                   <p className="text-sm font-semibold text-slate-900">
