@@ -7,7 +7,7 @@ import { SectionHeading } from "@/components/SectionHeading";
 
 const PRICING = {
   trialPrice: "$0 / 21 days",
-  bundlePrice: "$157"
+  bundlePrice: "$157/month"
 };
 
 const CHECKOUT_LINKS = {
