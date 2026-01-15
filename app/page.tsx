@@ -304,36 +304,6 @@ export default function Home() {
           </Container>
         </section>
 
-        <section className="pb-10">
-          <Container>
-            <div className="rounded-3xl border border-white/70 bg-white/80 px-6 py-10 shadow-soft backdrop-blur sm:px-10">
-              <p className="text-xs font-semibold uppercase tracking-[0.3em] text-slate-500">
-                Trusted by self-directed traders
-              </p>
-              <h2 className="mt-4 text-2xl font-semibold text-slate-900 sm:text-3xl">
-                Built for disciplined, rules-based decision making
-              </h2>
-              <div className="mt-8 grid gap-6 md:grid-cols-3">
-                {testimonials.map((testimonial) => (
-                  <div
-                    key={testimonial.name}
-                    className="rounded-2xl border border-white/70 bg-white/90 p-6 text-sm text-slate-600 shadow-soft"
-                  >
-                    <p className="text-slate-700">“{testimonial.quote}”</p>
-                    <p className="mt-4 text-xs font-semibold text-slate-500">
-                      — {testimonial.name}
-                    </p>
-                  </div>
-                ))}
-              </div>
-              <p className="mt-6 text-xs text-slate-500">
-                Testimonials reflect individual experiences and are not a
-                guarantee of future results.
-              </p>
-            </div>
-          </Container>
-        </section>
-
         <section className="py-20">
           <Container>
             <div className="overflow-hidden rounded-3xl border border-white/70 bg-white shadow-soft">
