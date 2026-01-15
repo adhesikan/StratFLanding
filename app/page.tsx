@@ -16,6 +16,7 @@ const CHECKOUT_LINKS = {
 };
 
 const CTA_LABEL = "Start Free Trial";
+const CTA_SUPPORTING_COPY = "Preview Workflow First";
 const CTA_MICROCOPY = "No credit card required • Cancel anytime";
 const CTA_COMPLIANCE = "For informational purposes only. Not investment advice.";
 
@@ -255,6 +256,7 @@ export default function Home() {
                 </a>
               </div>
               <div className="mt-4 space-y-1 text-xs text-slate-500">
+                <p>{CTA_SUPPORTING_COPY}</p>
                 <p>{CTA_MICROCOPY}</p>
                 <p>{CTA_COMPLIANCE}</p>
               </div>
@@ -311,6 +313,7 @@ export default function Home() {
                     {CTA_LABEL}
                   </button>
                   <div className="space-y-1 text-xs text-slate-500">
+                    <p>{CTA_SUPPORTING_COPY}</p>
                     <p>{CTA_MICROCOPY}</p>
                     <p>{CTA_COMPLIANCE}</p>
                   </div>
@@ -648,6 +651,7 @@ export default function Home() {
                   {CTA_LABEL}
                 </Link>
                 <div className="mt-3 space-y-1 text-xs text-slate-500">
+                  <p>{CTA_SUPPORTING_COPY}</p>
                   <p>{CTA_MICROCOPY}</p>
                   <p>{CTA_COMPLIANCE}</p>
                 </div>
@@ -684,6 +688,7 @@ export default function Home() {
                     {CTA_LABEL}
                   </Link>
                   <div className="mt-3 space-y-1 text-xs text-slate-500">
+                    <p>{CTA_SUPPORTING_COPY}</p>
                     <p>{CTA_MICROCOPY}</p>
                     <p>{CTA_COMPLIANCE}</p>
                   </div>
@@ -759,6 +764,7 @@ export default function Home() {
                     {CTA_LABEL}
                   </Link>
                   <div className="space-y-1 text-xs text-slate-500">
+                    <p>{CTA_SUPPORTING_COPY}</p>
                     <p>{CTA_MICROCOPY}</p>
                     <p>{CTA_COMPLIANCE}</p>
                   </div>
