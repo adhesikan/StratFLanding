@@ -84,7 +84,7 @@ const featureCards = [
   }
 ];
 
-const testimonials = [
+const detailedTestimonials = [
   {
     quote:
       "The historical rules make it easier to stay consistent when I review setups.",
@@ -524,7 +524,7 @@ export default function Home() {
               HOW TRADERS DESCRIBE STRATEGY FUNDAMENTALS
             </p>
             <div className="mt-10 grid gap-6 lg:grid-cols-3">
-              {testimonials.map((testimonial) => (
+              {detailedTestimonials.map((testimonial) => (
                 <div
                   key={testimonial.author}
                   className="rounded-2xl border border-white/70 bg-white/80 p-6 shadow-soft backdrop-blur"
