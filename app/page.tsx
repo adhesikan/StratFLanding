@@ -15,10 +15,29 @@ const CHECKOUT_LINKS = {
   bundle: "https://www.strategyfundamentals.com/pricing"
 };
 
-const trustBullets = [
-  "Trade ideas daily",
-  "Rules-based signals + alerts",
-  "Transparent, backtested methodology"
+const CTA_LABEL = "Start Free Trial";
+const CTA_MICROCOPY = "No credit card required • Cancel anytime";
+const CTA_COMPLIANCE = "For informational purposes only. Not investment advice.";
+
+const heroBenefits = [
+  "Daily setups with Entry & Target levels",
+  "Rules-based approach to reduce emotional trades",
+  "Works on mobile + desktop with alerts"
+];
+
+const testimonials = [
+  {
+    quote: "Clear entries and targets. Makes my day much more disciplined.",
+    name: "A. Patel"
+  },
+  {
+    quote: "Simple rules-based ideas I can follow without overthinking.",
+    name: "J. Morris"
+  },
+  {
+    quote: "Love getting alerts on my phone. Easy to stay consistent.",
+    name: "S. Kim"
+  }
 ];
 
 const steps = [
@@ -141,7 +160,7 @@ export default function Home() {
             href={CHECKOUT_LINKS.trial}
             className="rounded-full bg-gradient-to-r from-indigo-600 via-fuchsia-600 to-rose-500 px-4 py-2 text-sm font-semibold text-white shadow-soft transition hover:from-indigo-700 hover:via-fuchsia-600 hover:to-rose-600"
           >
-            Start Free Trial
+            {CTA_LABEL}
           </Link>
         </Container>
       </header>
@@ -156,37 +175,40 @@ export default function Home() {
                 Strategy Fundamentals Newsletter
               </p>
               <h1 className="mt-4 text-4xl font-semibold leading-tight text-slate-900 sm:text-5xl">
-                A data-driven trading newsletter powered by historical strategy
-                testing.
+                Stop Guessing. Get Rules-Based Stock Trade Ideas Daily.
               </h1>
               <p className="mt-5 text-lg text-slate-600">
-                Receive disciplined trade setups and alerts designed to reduce
-                guesswork and emotional trading.
+                A disciplined newsletter experience with clear Entry &amp; Target
+                prices, risk context, and alerts—built for self-directed traders.
               </p>
+              <ul className="mt-5 space-y-2 text-sm text-slate-600">
+                {heroBenefits.map((bullet) => (
+                  <li key={bullet} className="flex items-start gap-2">
+                    <span className="mt-2 h-2 w-2 rounded-full bg-gradient-to-r from-indigo-500 to-rose-500"></span>
+                    <span>{bullet}</span>
+                  </li>
+                ))}
+              </ul>
               <p className="mt-4 text-sm text-slate-500">
                 Past performance does not guarantee future results.
               </p>
               <div className="mt-8 flex flex-wrap gap-4">
                 <Link
                   href={CHECKOUT_LINKS.trial}
-                  className="rounded-full bg-gradient-to-r from-indigo-600 via-fuchsia-600 to-rose-500 px-6 py-3 text-sm font-semibold text-white shadow-soft transition hover:from-indigo-700 hover:via-fuchsia-600 hover:to-rose-600"
+                  className="rounded-full bg-gradient-to-r from-indigo-600 via-fuchsia-600 to-rose-500 px-7 py-3.5 text-sm font-semibold text-white shadow-soft transition hover:from-indigo-700 hover:via-fuchsia-600 hover:to-rose-600"
                 >
-                  Join the Newsletter
+                  {CTA_LABEL}
                 </Link>
                 <a
                   href="#how-it-works"
-                  className="rounded-full border border-white/70 bg-white/60 px-6 py-3 text-sm font-semibold text-slate-700 shadow-sm transition hover:border-indigo-200 hover:text-slate-900"
+                  className="rounded-full border border-white/70 bg-white/60 px-6 py-3.5 text-sm font-semibold text-slate-700 shadow-sm transition hover:border-indigo-200 hover:text-slate-900"
                 >
                   Preview the Workflow
                 </a>
               </div>
-              <div className="mt-8 flex flex-col gap-2 text-sm text-slate-600">
-                {trustBullets.map((bullet) => (
-                  <div key={bullet} className="flex items-center gap-2">
-                    <span className="inline-flex h-2 w-2 rounded-full bg-gradient-to-r from-indigo-500 to-rose-500"></span>
-                    <span>{bullet}</span>
-                  </div>
-                ))}
+              <div className="mt-4 space-y-1 text-xs text-slate-500">
+                <p>{CTA_MICROCOPY}</p>
+                <p>{CTA_COMPLIANCE}</p>
               </div>
             </div>
             <div className="rounded-3xl border border-white/70 bg-white/70 p-6 shadow-soft backdrop-blur">
@@ -223,21 +245,27 @@ export default function Home() {
                     />
                   </label>
                   <label className="block text-sm font-medium text-slate-700">
-                    Phone number
+                    Phone number{" "}
+                    <span className="text-xs font-normal text-slate-400">
+                      (optional)
+                    </span>
                     <input
                       type="tel"
                       name="phone"
                       placeholder="(555) 123-4567"
                       className="mt-2 w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-900 shadow-sm focus:border-indigo-300 focus:outline-none focus:ring-2 focus:ring-indigo-200"
-                      required
                     />
                   </label>
                   <button
                     type="submit"
-                    className="mt-2 inline-flex w-full items-center justify-center rounded-full bg-gradient-to-r from-indigo-600 via-fuchsia-600 to-rose-500 px-6 py-3 text-sm font-semibold text-white shadow-soft transition hover:from-indigo-700 hover:via-fuchsia-600 hover:to-rose-600"
+                    className="mt-2 inline-flex w-full items-center justify-center rounded-full bg-gradient-to-r from-indigo-600 via-fuchsia-600 to-rose-500 px-7 py-3.5 text-sm font-semibold text-white shadow-soft transition hover:from-indigo-700 hover:via-fuchsia-600 hover:to-rose-600"
                   >
-                    Get Free Trial Access
+                    {CTA_LABEL}
                   </button>
+                  <div className="space-y-1 text-xs text-slate-500">
+                    <p>{CTA_MICROCOPY}</p>
+                    <p>{CTA_COMPLIANCE}</p>
+                  </div>
                 </form>
                 <p className="mt-4 text-xs text-slate-500">
                   By submitting, you agree to receive onboarding updates. Cancel
@@ -254,6 +282,36 @@ export default function Home() {
                   priority
                 />
               </div>
+            </div>
+          </Container>
+        </section>
+
+        <section className="pb-10">
+          <Container>
+            <div className="rounded-3xl border border-white/70 bg-white/80 px-6 py-10 shadow-soft backdrop-blur sm:px-10">
+              <p className="text-xs font-semibold uppercase tracking-[0.3em] text-slate-500">
+                Trusted by self-directed traders
+              </p>
+              <h2 className="mt-4 text-2xl font-semibold text-slate-900 sm:text-3xl">
+                Built for disciplined, rules-based decision making
+              </h2>
+              <div className="mt-8 grid gap-6 md:grid-cols-3">
+                {testimonials.map((testimonial) => (
+                  <div
+                    key={testimonial.name}
+                    className="rounded-2xl border border-white/70 bg-white/90 p-6 text-sm text-slate-600 shadow-soft"
+                  >
+                    <p className="text-slate-700">“{testimonial.quote}”</p>
+                    <p className="mt-4 text-xs font-semibold text-slate-500">
+                      — {testimonial.name}
+                    </p>
+                  </div>
+                ))}
+              </div>
+              <p className="mt-6 text-xs text-slate-500">
+                Testimonials reflect individual experiences and are not a
+                guarantee of future results.
+              </p>
             </div>
           </Container>
         </section>
@@ -313,10 +371,25 @@ export default function Home() {
                 <SectionHeading
                   eyebrow="Dashboard preview"
                   title="Everything in one signal-focused workspace"
-                  description="Track active setups, review risk notes, and see alert status in one glance. Designed for fast decisions and clean data hygiene."
+                  description="Everything you need to evaluate each setup quickly."
                 />
+                <ul className="mt-6 space-y-2 text-sm text-slate-600">
+                  <li className="flex items-start gap-2">
+                    <span className="mt-2 h-2 w-2 rounded-full bg-accent-500"></span>
+                    Track active setups, entries, and targets in one view.
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="mt-2 h-2 w-2 rounded-full bg-accent-500"></span>
+                    Review risk notes before deciding on any trade.
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="mt-2 h-2 w-2 rounded-full bg-accent-500"></span>
+                    Monitor alert status with clean, consistent labels.
+                  </li>
+                </ul>
                 <div className="mt-6 rounded-2xl border border-indigo-200/70 bg-white/80 p-4 text-sm text-indigo-700 shadow-sm">
-                  PWA + push notifications supported for desktop and mobile alerts.
+                  PWA + push notifications supported for desktop and mobile
+                  alerts.
                 </div>
               </div>
               <div className="rounded-3xl border border-white/70 bg-white p-6 shadow-soft">
@@ -350,8 +423,22 @@ export default function Home() {
                 <SectionHeading
                   eyebrow="Alerts"
                   title="Push notifications that keep you aligned with the rules"
-                  description="Enable desktop or mobile PWA alerts to stay informed when a setup hits its historical trigger. You stay in control of every trade decision."
+                  description="Stay in sync with each setup when it triggers."
                 />
+                <ul className="mt-6 space-y-2 text-sm text-slate-600">
+                  <li className="flex items-start gap-2">
+                    <span className="mt-2 h-2 w-2 rounded-full bg-accent-500"></span>
+                    Mobile + desktop alerts delivered through PWA.
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="mt-2 h-2 w-2 rounded-full bg-accent-500"></span>
+                    Rule-based triggers with clear context.
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="mt-2 h-2 w-2 rounded-full bg-accent-500"></span>
+                    You decide if and when to place any trade.
+                  </li>
+                </ul>
                 <p className="mt-6 text-sm text-slate-600">
                   PWA + push notifications supported. Alerts are informational and
                   do not constitute investment advice.
@@ -442,10 +529,14 @@ export default function Home() {
                 </ul>
                 <Link
                   href={CHECKOUT_LINKS.trial}
-                  className="mt-8 inline-flex w-full items-center justify-center rounded-full border border-indigo-200 bg-white/70 px-6 py-3 text-sm font-semibold text-indigo-700 transition hover:border-indigo-300 hover:text-indigo-800"
+                  className="mt-8 inline-flex w-full items-center justify-center rounded-full border border-indigo-200 bg-white/70 px-7 py-3.5 text-sm font-semibold text-indigo-700 transition hover:border-indigo-300 hover:text-indigo-800"
                 >
-                  Start Free Trial
+                  {CTA_LABEL}
                 </Link>
+                <div className="mt-3 space-y-1 text-xs text-slate-500">
+                  <p>{CTA_MICROCOPY}</p>
+                  <p>{CTA_COMPLIANCE}</p>
+                </div>
               </div>
               <div className="rounded-3xl border border-transparent bg-gradient-to-br from-indigo-600 via-fuchsia-600 to-rose-500 p-[1px] shadow-soft">
                 <div className="rounded-[22px] bg-white/90 p-8">
@@ -474,10 +565,14 @@ export default function Home() {
                   </ul>
                   <Link
                     href={CHECKOUT_LINKS.bundle}
-                    className="mt-8 inline-flex w-full items-center justify-center rounded-full bg-gradient-to-r from-indigo-600 via-fuchsia-600 to-rose-500 px-6 py-3 text-sm font-semibold text-white shadow-soft transition hover:from-indigo-700 hover:via-fuchsia-600 hover:to-rose-600"
+                    className="mt-8 inline-flex w-full items-center justify-center rounded-full bg-gradient-to-r from-indigo-600 via-fuchsia-600 to-rose-500 px-7 py-3.5 text-sm font-semibold text-white shadow-soft transition hover:from-indigo-700 hover:via-fuchsia-600 hover:to-rose-600"
                   >
-                    Subscribe to Bundle
+                    {CTA_LABEL}
                   </Link>
+                  <div className="mt-3 space-y-1 text-xs text-slate-500">
+                    <p>{CTA_MICROCOPY}</p>
+                    <p>{CTA_COMPLIANCE}</p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -519,27 +614,40 @@ export default function Home() {
                     Get the newsletter + dashboard access today
                   </h2>
                   <p className="mt-4 text-base text-slate-600">
-                    Join Strategy Fundamentals for educational signals, dashboard
-                    alerts, and transparent historical strategy rules. No
-                    recommendations — just clear setups you can evaluate.
+                    Join Strategy Fundamentals for a clear, repeatable workflow.
                   </p>
+                  <ul className="mt-4 space-y-2 text-sm text-slate-600">
+                    <li className="flex items-start gap-2">
+                      <span className="mt-2 h-2 w-2 rounded-full bg-accent-500"></span>
+                      Educational signals with Entry &amp; Target context.
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="mt-2 h-2 w-2 rounded-full bg-accent-500"></span>
+                      Alerts delivered to desktop and mobile.
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="mt-2 h-2 w-2 rounded-full bg-accent-500"></span>
+                      Transparent rules so you stay in control.
+                    </li>
+                  </ul>
                 </div>
                 <div className="flex flex-col gap-4">
                   <Link
                     href={CHECKOUT_LINKS.bundle}
-                    className="inline-flex w-full items-center justify-center rounded-full bg-gradient-to-r from-indigo-600 via-fuchsia-600 to-rose-500 px-6 py-3 text-sm font-semibold text-white shadow-soft transition hover:from-indigo-700 hover:via-fuchsia-600 hover:to-rose-600"
+                    className="inline-flex w-full items-center justify-center rounded-full bg-gradient-to-r from-indigo-600 via-fuchsia-600 to-rose-500 px-7 py-3.5 text-sm font-semibold text-white shadow-soft transition hover:from-indigo-700 hover:via-fuchsia-600 hover:to-rose-600"
                   >
-                    View Pricing & Plans
+                    {CTA_LABEL}
                   </Link>
                   <Link
                     href={CHECKOUT_LINKS.trial}
-                    className="inline-flex w-full items-center justify-center rounded-full border border-indigo-200 bg-white/70 px-6 py-3 text-sm font-semibold text-indigo-700 transition hover:border-indigo-300 hover:text-indigo-800"
+                    className="inline-flex w-full items-center justify-center rounded-full border border-indigo-200 bg-white/70 px-7 py-3.5 text-sm font-semibold text-indigo-700 transition hover:border-indigo-300 hover:text-indigo-800"
                   >
-                    Start Your Free Trial
+                    {CTA_LABEL}
                   </Link>
-                  <p className="text-xs text-slate-500">
-                    Explore pricing to choose the plan that fits your workflow.
-                  </p>
+                  <div className="space-y-1 text-xs text-slate-500">
+                    <p>{CTA_MICROCOPY}</p>
+                    <p>{CTA_COMPLIANCE}</p>
+                  </div>
                 </div>
               </div>
             </div>
