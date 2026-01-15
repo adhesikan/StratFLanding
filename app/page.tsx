@@ -102,6 +102,36 @@ const detailedTestimonials = [
   }
 ];
 
+const tradeWorkflowExamples = [
+  {
+    symbol: "AAPL",
+    entryDate: "Mar 12, 2024",
+    result: "Target hit",
+    entry: "$172.40",
+    exit: "$176.80",
+    outcome: "Target hit",
+    exitDate: "Mar 14, 2024"
+  },
+  {
+    symbol: "NVDA",
+    entryDate: "Mar 15, 2024",
+    result: "Stop hit",
+    entry: "$875.20",
+    exit: "$861.40",
+    outcome: "Stop hit",
+    exitDate: "Mar 15, 2024"
+  },
+  {
+    symbol: "MSFT",
+    entryDate: "Mar 18, 2024",
+    result: "Closed",
+    entry: "$414.90",
+    exit: "$419.30",
+    outcome: "Closed",
+    exitDate: "Mar 19, 2024"
+  }
+];
+
 const faqs = [
   {
     question: "Is this financial advice?",
@@ -309,14 +339,14 @@ export default function Home() {
             <div className="overflow-hidden rounded-3xl border border-white/70 bg-white shadow-soft">
               <Image
                 src="/performance.png"
-                alt="Illustrative backtest performance chart"
+                alt="Illustrative workflow chart"
                 width={1200}
                 height={675}
                 className="h-auto w-full object-cover"
               />
             </div>
             <p className="mt-4 text-center text-xs font-semibold uppercase tracking-[0.3em] text-slate-500">
-              Sample performance snapshot
+              SAMPLE WORKFLOW SNAPSHOT
             </p>
           </Container>
         </section>
@@ -401,6 +431,66 @@ export default function Home() {
                 </p>
               </div>
             </div>
+          </Container>
+        </section>
+
+        <section className="py-20">
+          <Container>
+            <SectionHeading
+              eyebrow="Workflow example"
+              title="Example Trade Workflow"
+              description="Illustrative example of how trade ideas are tracked from entry to exit for educational and informational purposes."
+              align="center"
+            />
+            <div className="mt-10 overflow-hidden rounded-3xl border border-white/70 bg-white shadow-soft">
+              <div className="overflow-x-auto">
+                <table className="w-full text-left text-sm text-slate-600">
+                  <thead className="bg-slate-50 text-xs uppercase tracking-[0.12em] text-slate-500">
+                    <tr>
+                      <th className="px-6 py-4 font-semibold">Symbol</th>
+                      <th className="px-6 py-4 font-semibold">Entry Date</th>
+                      <th className="px-6 py-4 font-semibold">Result</th>
+                      <th className="px-6 py-4 font-semibold">Entry</th>
+                      <th className="px-6 py-4 font-semibold">Exit</th>
+                      <th className="px-6 py-4 font-semibold">Outcome</th>
+                      <th className="px-6 py-4 font-semibold">Exit Date</th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-slate-100">
+                    {tradeWorkflowExamples.map((row) => (
+                      <tr key={`${row.symbol}-${row.entryDate}`}>
+                        <td className="px-6 py-4 font-semibold text-slate-900">
+                          {row.symbol}
+                        </td>
+                        <td className="px-6 py-4">{row.entryDate}</td>
+                        <td className="px-6 py-4">
+                          <span
+                            className={`inline-flex rounded-full px-3 py-1 text-xs font-semibold ${
+                              row.result === "Target hit"
+                                ? "bg-emerald-50 text-emerald-700"
+                                : row.result === "Stop hit"
+                                  ? "bg-rose-50 text-rose-700"
+                                  : "bg-slate-100 text-slate-600"
+                            }`}
+                          >
+                            {row.result}
+                          </span>
+                        </td>
+                        <td className="px-6 py-4">{row.entry}</td>
+                        <td className="px-6 py-4">{row.exit}</td>
+                        <td className="px-6 py-4">{row.outcome}</td>
+                        <td className="px-6 py-4">{row.exitDate}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <p className="mt-4 text-center text-xs text-slate-500">
+              This table is a sample workflow for demonstration purposes only.
+              It is not a performance record and should not be interpreted as
+              actual or expected results.
+            </p>
           </Container>
         </section>
 
