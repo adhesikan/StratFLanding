@@ -65,6 +65,24 @@ const featureCards = [
   }
 ];
 
+const testimonials = [
+  {
+    quote:
+      "The historical rules make it easier to stay consistent when I review setups.",
+    author: "— Alex P."
+  },
+  {
+    quote:
+      "I like the structured alerts because they keep my process focused on the plan.",
+    author: "— Jordan M."
+  },
+  {
+    quote:
+      "The dashboard keeps the context clear so I can decide what fits my risk.",
+    author: "— Sam K."
+  }
+];
+
 const faqs = [
   {
     question: "Is this financial advice?",
@@ -410,6 +428,33 @@ export default function Home() {
                 </div>
               ))}
             </div>
+          </Container>
+        </section>
+
+        <section className="py-20">
+          <Container>
+            <p className="text-center text-sm font-semibold uppercase tracking-[0.2em] text-accent-600">
+              HOW TRADERS DESCRIBE STRATEGY FUNDAMENTALS
+            </p>
+            <div className="mt-10 grid gap-6 lg:grid-cols-3">
+              {testimonials.map((testimonial) => (
+                <div
+                  key={testimonial.author}
+                  className="rounded-2xl border border-white/70 bg-white/80 p-6 shadow-soft backdrop-blur"
+                >
+                  <p className="text-sm text-slate-600">
+                    “{testimonial.quote}”
+                  </p>
+                  <p className="mt-4 text-sm font-semibold text-slate-900">
+                    {testimonial.author}
+                  </p>
+                </div>
+              ))}
+            </div>
+            <p className="mt-6 text-center text-xs text-slate-500">
+              Quotes shown are illustrative examples of how users may describe
+              the platform. Individual experiences may vary.
+            </p>
           </Container>
         </section>
 
