@@ -334,23 +334,6 @@ export default function Home() {
           </Container>
         </section>
 
-        <section className="py-20">
-          <Container>
-            <div className="overflow-hidden rounded-3xl border border-white/70 bg-white shadow-soft">
-              <Image
-                src="/performance.png"
-                alt="Illustrative workflow chart"
-                width={1200}
-                height={675}
-                className="h-auto w-full object-cover"
-              />
-            </div>
-            <p className="mt-4 text-center text-xs font-semibold uppercase tracking-[0.3em] text-slate-500">
-              SAMPLE WORKFLOW SNAPSHOT
-            </p>
-          </Container>
-        </section>
-
         <section id="how-it-works" className="py-20">
           <Container>
             <SectionHeading
