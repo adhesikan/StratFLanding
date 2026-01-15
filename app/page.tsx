@@ -334,6 +334,32 @@ export default function Home() {
           </Container>
         </section>
 
+        <section className="pb-20">
+          <Container>
+            <div className="grid items-center gap-10 rounded-3xl border border-white/70 bg-white/70 p-8 shadow-soft backdrop-blur lg:grid-cols-[1.05fr_0.95fr]">
+              <div>
+                <p className="text-sm font-semibold uppercase tracking-[0.2em] text-accent-600">
+                  See a Trade Setup at a Glance
+                </p>
+                <h2 className="mt-4 text-3xl font-semibold text-slate-900 sm:text-4xl">
+                  Every idea includes a clear Entry, Target, and Stop, plus
+                  real-time mobile and desktop alerts — so you always know the
+                  plan before you act.
+                </h2>
+              </div>
+              <div className="overflow-hidden rounded-2xl border border-white/70 bg-white shadow-sm">
+                <Image
+                  src="/Tradecard.png"
+                  alt="Trade card showing entry, target, and stop details"
+                  width={720}
+                  height={540}
+                  className="h-auto w-full object-cover"
+                />
+              </div>
+            </div>
+          </Container>
+        </section>
+
         <section id="how-it-works" className="py-20">
           <Container>
             <SectionHeading
