@@ -270,56 +270,23 @@ export default function Home() {
                   Get 21 days of signals for $0.
                 </h2>
                 <p className="mt-2 text-sm text-slate-600">
-                  Share your details to unlock the dashboard. No credit card
-                  required.
+                  Unlock the dashboard instantly. No credit card required.
                 </p>
-                <form className="mt-6 space-y-4">
-                  <label className="block text-sm font-medium text-slate-700">
-                    Full name
-                    <input
-                      type="text"
-                      name="name"
-                      placeholder="Jordan Lee"
-                      className="mt-2 w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-900 shadow-sm focus:border-indigo-300 focus:outline-none focus:ring-2 focus:ring-indigo-200"
-                      required
-                    />
-                  </label>
-                  <label className="block text-sm font-medium text-slate-700">
-                    Email address
-                    <input
-                      type="email"
-                      name="email"
-                      placeholder="jordan@email.com"
-                      className="mt-2 w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-900 shadow-sm focus:border-indigo-300 focus:outline-none focus:ring-2 focus:ring-indigo-200"
-                      required
-                    />
-                  </label>
-                  <label className="block text-sm font-medium text-slate-700">
-                    Phone number{" "}
-                    <span className="text-xs font-normal text-slate-400">
-                      (optional)
-                    </span>
-                    <input
-                      type="tel"
-                      name="phone"
-                      placeholder="(555) 123-4567"
-                      className="mt-2 w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-900 shadow-sm focus:border-indigo-300 focus:outline-none focus:ring-2 focus:ring-indigo-200"
-                    />
-                  </label>
-                  <button
-                    type="submit"
-                    className="mt-2 inline-flex w-full items-center justify-center rounded-full bg-gradient-to-r from-indigo-600 via-fuchsia-600 to-rose-500 px-7 py-3.5 text-sm font-semibold text-white shadow-soft transition hover:from-indigo-700 hover:via-fuchsia-600 hover:to-rose-600"
+                <div className="mt-6 space-y-4">
+                  <Link
+                    href={CHECKOUT_LINKS.trial}
+                    className="inline-flex w-full items-center justify-center rounded-full bg-gradient-to-r from-indigo-600 via-fuchsia-600 to-rose-500 px-7 py-3.5 text-sm font-semibold text-white shadow-soft transition hover:from-indigo-700 hover:via-fuchsia-600 hover:to-rose-600"
                   >
                     {CTA_LABEL}
-                  </button>
+                  </Link>
                   <div className="space-y-1 text-xs text-slate-500">
                     <p>{CTA_SUPPORTING_COPY}</p>
                     <p>{CTA_MICROCOPY}</p>
                     <p>{CTA_COMPLIANCE}</p>
                   </div>
-                </form>
+                </div>
                 <p className="mt-4 text-xs text-slate-500">
-                  By submitting, you agree to receive onboarding updates. Cancel
+                  By starting, you agree to receive onboarding updates. Cancel
                   anytime.
                 </p>
               </div>
