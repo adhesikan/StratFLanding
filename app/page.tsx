@@ -11,7 +11,7 @@ const PRICING = {
 };
 
 const CHECKOUT_LINKS = {
-  trial: "https://www.strategyfundamentals.com/pricing",
+  trial: "https://www.strategyfundamentals.com/signup",
   bundle: "https://www.strategyfundamentals.com/pricing"
 };
 
