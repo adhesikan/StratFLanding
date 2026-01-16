@@ -47,7 +47,7 @@ const steps = [
       "Choose the rule sets that align with your timeframe and market focus."
   },
   {
-    title: "Receive dashboard signals + push alerts",
+    title: "Receive dashboard trade ideas + push alerts",
     description:
       "Get notified when a setup meets the historical rules. PWA + push notifications supported."
   },
@@ -62,12 +62,12 @@ const featureCards = [
   {
     title: "Rule-based entries/exits",
     description:
-      "Clear historical criteria help you understand what triggers each signal."
+      "Clear historical criteria help you understand what triggers each trade idea."
   },
   {
     title: "Real-time dashboard updates",
     description:
-      "Watch signals update throughout the session with concise, contextual status labels."
+      "Watch trade ideas update throughout the session with concise, contextual status labels."
   },
   {
     title: "Push notifications",
@@ -136,7 +136,7 @@ const faqs = [
   {
     question: "Is this financial advice?",
     answer:
-      "No. Strategy Fundamentals is an educational newsletter and dashboard. We share historical strategy rules and signals for informational purposes only."
+      "No. Strategy Fundamentals is an educational newsletter and dashboard. We share historical strategy rules and trade ideas for informational purposes only."
   },
   {
     question: "What are push notifications and how do I enable them?",
@@ -156,7 +156,7 @@ const faqs = [
   {
     question: "Do you execute trades for me?",
     answer:
-      "No. We provide signals and context, but you decide if and when to place any trades."
+      "No. We provide trade ideas and context, but you decide if and when to place any trades."
   },
   {
     question: "What markets/timeframes does this cover?",
@@ -259,7 +259,7 @@ export default function Home() {
                   Free trial access
                 </p>
                 <h2 className="mt-3 text-2xl font-semibold text-slate-900">
-                  Get 21 days of signals for $0.
+                  Get 21 days of trade ideas for $0.
                 </h2>
                 <p className="mt-2 text-sm text-slate-600">
                   Unlock the dashboard instantly. No credit card required.
@@ -285,7 +285,7 @@ export default function Home() {
               <div className="mt-6 overflow-hidden rounded-2xl border border-white/70 bg-white shadow-sm">
                 <Image
                   src="/happytrader.png"
-                  alt="Trader reviewing signals on a dashboard"
+                  alt="Trader reviewing trade ideas on a dashboard"
                   width={640}
                   height={420}
                   className="h-auto w-full object-cover"
@@ -359,7 +359,7 @@ export default function Home() {
               <div className="flex flex-col justify-center">
                 <SectionHeading
                   eyebrow="Dashboard preview"
-                  title="Everything in one signal-focused workspace"
+                  title="Everything in one trade-idea-focused workspace"
                   description="Everything you need to evaluate each setup quickly."
                 />
                 <ul className="mt-6 space-y-2 text-sm text-slate-600">
@@ -383,7 +383,7 @@ export default function Home() {
               </div>
               <div className="rounded-3xl border border-white/70 bg-white p-6 shadow-soft">
                 <div className="flex items-center justify-between text-sm font-semibold text-slate-600">
-                  <span>Signals dashboard</span>
+                  <span>Trade ideas dashboard</span>
                   <span className="rounded-full bg-emerald-50 px-3 py-1 text-xs font-semibold text-emerald-700">
                     Live
                   </span>
@@ -398,7 +398,7 @@ export default function Home() {
                   />
                 </div>
                 <p className="mt-4 text-xs text-slate-500">
-                  Illustrative dashboard layout. Educational signals only.
+                  Illustrative dashboard layout. Educational trade ideas only.
                 </p>
               </div>
             </div>
@@ -529,7 +529,7 @@ export default function Home() {
             <SectionHeading
               eyebrow="Features"
               title="Everything you need to stay disciplined"
-              description="A streamlined dashboard, clear signals, and context-rich notes to help you keep your process consistent."
+              description="A streamlined dashboard, clear trade ideas, and context-rich notes to help you keep your process consistent."
             />
             <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
               {featureCards.map((feature) => (
@@ -659,7 +659,7 @@ export default function Home() {
                   <ul className="mt-4 space-y-2 text-sm text-slate-600">
                     <li className="flex items-start gap-2">
                       <span className="mt-2 h-2 w-2 rounded-full bg-accent-500"></span>
-                      Educational signals with Entry &amp; Target context.
+                      Educational trade ideas with Entry &amp; Target context.
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="mt-2 h-2 w-2 rounded-full bg-accent-500"></span>
@@ -721,7 +721,7 @@ export default function Home() {
           </div>
           <p className="mt-6 text-xs text-slate-500">
             Strategy Fundamentals is for educational and informational purposes
-            only and does not provide financial advice. All signals, trade ideas,
+            only and does not provide financial advice. All trade ideas
             and strategy rules are based on historical data and are not
             guarantees of future results. You are solely responsible for your
             own trading decisions. Historical backtests are not indicative of
