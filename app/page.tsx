@@ -6,8 +6,7 @@ import { Container } from "@/components/Container";
 import { SectionHeading } from "@/components/SectionHeading";
 
 const PRICING = {
-  trialPrice: "$0 / 21 days",
-  bundlePrice: "$157/month"
+  trialPrice: "$0 / 21 days"
 };
 
 const CHECKOUT_LINKS = {
@@ -171,13 +170,6 @@ const pricingDetails = [
   "Email newsletter + alerts",
   "Strategy bundle updates",
   "Onboarding support"
-];
-
-const bundleDetails = [
-  ...pricingDetails,
-  "Access to all 8 packages",
-  "Cancel anytime",
-  "Priority push notifications"
 ];
 
 export default function Home() {
@@ -592,7 +584,7 @@ export default function Home() {
               description="Choose the plan that fits your workflow. Cancel anytime."
               align="center"
             />
-            <div className="mt-12 grid gap-6 lg:grid-cols-2">
+            <div className="mt-12 grid gap-6 lg:mx-auto lg:max-w-xl">
               <div className="rounded-3xl border border-white/70 bg-white/80 p-8 shadow-soft backdrop-blur">
                 <p className="text-sm font-semibold uppercase tracking-[0.2em] text-slate-500">
                   Trial
@@ -613,7 +605,7 @@ export default function Home() {
                 </ul>
                 <Link
                   href={CHECKOUT_LINKS.trial}
-                  className="mt-8 inline-flex w-full items-center justify-center rounded-full border border-indigo-200 bg-white/70 px-7 py-3.5 text-sm font-semibold text-indigo-700 transition hover:border-indigo-300 hover:text-indigo-800"
+                  className="mt-8 inline-flex w-full items-center justify-center rounded-full bg-gradient-to-r from-indigo-600 via-fuchsia-600 to-rose-500 px-7 py-3.5 text-sm font-semibold text-white shadow-soft transition hover:from-indigo-700 hover:via-fuchsia-600 hover:to-rose-600"
                 >
                   {CTA_LABEL}
                 </Link>
@@ -621,44 +613,6 @@ export default function Home() {
                   <p>{CTA_SUPPORTING_COPY}</p>
                   <p>{CTA_MICROCOPY}</p>
                   <p>{CTA_COMPLIANCE}</p>
-                </div>
-              </div>
-              <div className="rounded-3xl border border-transparent bg-gradient-to-br from-indigo-600 via-fuchsia-600 to-rose-500 p-[1px] shadow-soft">
-                <div className="rounded-[22px] bg-white/90 p-8">
-                  <div className="flex items-center justify-between">
-                    <p className="text-sm font-semibold uppercase tracking-[0.2em] text-accent-600">
-                      Bundle
-                    </p>
-                    <span className="rounded-full bg-accent-50 px-3 py-1 text-xs font-semibold text-accent-700">
-                      Most popular
-                    </span>
-                  </div>
-                  <p className="mt-4 text-4xl font-semibold text-slate-900">
-                    {PRICING.bundlePrice}
-                  </p>
-                  <p className="mt-2 text-sm text-slate-600">
-                    50% less than subscribing to 8 individual packages, with access to
-                    all 8 packages. Cancel anytime.
-                  </p>
-                  <ul className="mt-6 space-y-3 text-sm text-slate-600">
-                    {bundleDetails.map((item) => (
-                      <li key={item} className="flex items-center gap-2">
-                        <span className="h-2 w-2 rounded-full bg-gradient-to-r from-indigo-500 to-rose-500"></span>
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                  <Link
-                    href={CHECKOUT_LINKS.bundle}
-                    className="mt-8 inline-flex w-full items-center justify-center rounded-full bg-gradient-to-r from-indigo-600 via-fuchsia-600 to-rose-500 px-7 py-3.5 text-sm font-semibold text-white shadow-soft transition hover:from-indigo-700 hover:via-fuchsia-600 hover:to-rose-600"
-                  >
-                    {CTA_LABEL}
-                  </Link>
-                  <div className="mt-3 space-y-1 text-xs text-slate-500">
-                    <p>{CTA_SUPPORTING_COPY}</p>
-                    <p>{CTA_MICROCOPY}</p>
-                    <p>{CTA_COMPLIANCE}</p>
-                  </div>
                 </div>
               </div>
             </div>
