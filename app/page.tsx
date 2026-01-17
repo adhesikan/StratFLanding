@@ -25,6 +25,19 @@ const heroBenefits = [
   "Works on mobile + desktop with alerts"
 ];
 
+const multiFactorBullets = [
+  "Trend direction and strength",
+  "Relative strength vs the broader market",
+  "Volume behavior and confirmation",
+  "Support and resistance context",
+  "Volatility and risk range",
+  "Market regime (trend vs range)",
+  "Timeframe alignment",
+  "Price structure and momentum",
+  "Liquidity considerations",
+  "Risk/reward context"
+];
+
 const testimonials = [
   {
     quote: "Clear entries and targets. Makes my day much more disciplined.",
@@ -292,6 +305,36 @@ export default function Home() {
                   priority
                 />
               </div>
+            </div>
+          </Container>
+        </section>
+
+        <section className="pb-20">
+          <Container>
+            <div className="rounded-3xl border border-white/70 bg-white/70 p-8 shadow-soft backdrop-blur">
+              <h2 className="text-3xl font-semibold text-slate-900 sm:text-4xl">
+                Trade Ideas Informed by 10+ Market Factors
+              </h2>
+              <p className="mt-4 text-sm text-slate-600 sm:text-base">
+                Each trade idea is evaluated using a consistent, rules-based
+                framework that incorporates multiple technical and
+                market-context inputs. This structured approach is designed to
+                support disciplined, self-directed decision-making — but does
+                not guarantee outcomes.
+              </p>
+              <ul className="mt-6 grid gap-3 text-sm text-slate-600 sm:grid-cols-2">
+                {multiFactorBullets.map((bullet) => (
+                  <li key={bullet} className="flex items-start gap-2">
+                    <span className="mt-2 h-2 w-2 rounded-full bg-gradient-to-r from-indigo-500 to-rose-500"></span>
+                    <span>{bullet}</span>
+                  </li>
+                ))}
+              </ul>
+              <p className="mt-5 text-xs text-slate-500">
+                Informational use only. Strategy Fundamentals does not provide
+                investment advice or trade recommendations. All decisions and
+                risk remain with the user.
+              </p>
             </div>
           </Container>
         </section>
