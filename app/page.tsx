@@ -193,23 +193,6 @@ export default function Home() {
           <div className="text-xl font-semibold text-slate-900 sm:text-2xl">
             Strategy Fundamentals
           </div>
-          <nav className="hidden items-center gap-6 text-sm font-medium text-slate-700 md:flex">
-            <a className="transition hover:text-accent-600" href="#how-it-works">
-              How it Works
-            </a>
-            <a className="transition hover:text-accent-600" href="#dashboard">
-              Dashboard
-            </a>
-            <a className="transition hover:text-accent-600" href="#alerts">
-              Alerts
-            </a>
-            <a className="transition hover:text-accent-600" href="#pricing">
-              Pricing
-            </a>
-            <a className="transition hover:text-accent-600" href="#faq">
-              FAQ
-            </a>
-          </nav>
           <Link
             href={CHECKOUT_LINKS.trial}
             className="rounded-full bg-gradient-to-r from-indigo-600 via-fuchsia-600 to-rose-500 px-4 py-2 text-sm font-semibold text-white shadow-soft transition hover:from-indigo-700 hover:via-fuchsia-600 hover:to-rose-600"
