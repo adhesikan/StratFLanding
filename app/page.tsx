@@ -97,21 +97,16 @@ const featureCards = [
   }
 ];
 
-const detailedTestimonials = [
+const memberTestimonials = [
   {
-    quote:
-      "The historical rules make it easier to stay consistent when I review setups.",
-    author: "— Alex P."
-  },
-  {
-    quote:
-      "I like the structured alerts because they keep my process focused on the plan.",
-    author: "— Jordan M."
-  },
-  {
-    quote:
-      "The dashboard keeps the context clear so I can decide what fits my risk.",
-    author: "— Sam K."
+    quote: `I’m relatively new to Strategy Fundamentals and became a member in early January 2026. My overall experience with the service has been excellent.
+
+The trade ideas are thoughtfully structured and clearly presented, which has helped me better understand trade setups and decision-making. I’ve also been impressed with the overall design and layout of the website — it’s intuitive and well organized.
+
+The platform provides a comprehensive set of tools and information that can be valuable for both newer traders and those with more experience.
+
+Overall, my experience has been very positive, and I look forward to continuing to use Strategy Fundamentals.`,
+    author: "— Jay, Strategy Fundamentals Subscriber"
   }
 ];
 
@@ -431,66 +426,6 @@ export default function Home() {
           </Container>
         </section>
 
-        <section className="py-20">
-          <Container>
-            <SectionHeading
-              eyebrow="Workflow example"
-              title="Example Trade Workflow"
-              description="Illustrative example of how trade ideas are tracked from entry to exit for educational and informational purposes."
-              align="center"
-            />
-            <div className="mt-10 overflow-hidden rounded-3xl border border-white/70 bg-white shadow-soft">
-              <div className="overflow-x-auto">
-                <table className="w-full text-left text-sm text-slate-600">
-                  <thead className="bg-slate-50 text-xs uppercase tracking-[0.12em] text-slate-500">
-                    <tr>
-                      <th className="px-6 py-4 font-semibold">Symbol</th>
-                      <th className="px-6 py-4 font-semibold">Entry Date</th>
-                      <th className="px-6 py-4 font-semibold">Result</th>
-                      <th className="px-6 py-4 font-semibold">Entry</th>
-                      <th className="px-6 py-4 font-semibold">Exit</th>
-                      <th className="px-6 py-4 font-semibold">Outcome</th>
-                      <th className="px-6 py-4 font-semibold">Exit Date</th>
-                    </tr>
-                  </thead>
-                  <tbody className="divide-y divide-slate-100">
-                    {tradeWorkflowExamples.map((row) => (
-                      <tr key={`${row.symbol}-${row.entryDate}`}>
-                        <td className="px-6 py-4 font-semibold text-slate-900">
-                          {row.symbol}
-                        </td>
-                        <td className="px-6 py-4">{row.entryDate}</td>
-                        <td className="px-6 py-4">
-                          <span
-                            className={`inline-flex rounded-full px-3 py-1 text-xs font-semibold ${
-                              row.result === "Target hit"
-                                ? "bg-emerald-50 text-emerald-700"
-                                : row.result === "Stop hit"
-                                  ? "bg-rose-50 text-rose-700"
-                                  : "bg-slate-100 text-slate-600"
-                            }`}
-                          >
-                            {row.result}
-                          </span>
-                        </td>
-                        <td className="px-6 py-4">{row.entry}</td>
-                        <td className="px-6 py-4">{row.exit}</td>
-                        <td className="px-6 py-4">{row.outcome}</td>
-                        <td className="px-6 py-4">{row.exitDate}</td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-            </div>
-            <p className="mt-4 text-center text-xs text-slate-500">
-              This table is a sample workflow for demonstration purposes only.
-              It is not a performance record and should not be interpreted as
-              actual or expected results.
-            </p>
-          </Container>
-        </section>
-
         <section id="alerts" className="py-20">
           <Container>
             <div className="grid gap-10 lg:grid-cols-[1fr_1.1fr]">
@@ -577,27 +512,91 @@ export default function Home() {
 
         <section className="py-20">
           <Container>
-            <p className="text-center text-sm font-semibold uppercase tracking-[0.2em] text-accent-600">
-              HOW TRADERS DESCRIBE STRATEGY FUNDAMENTALS
-            </p>
-            <div className="mt-10 grid gap-6 lg:grid-cols-3">
-              {detailedTestimonials.map((testimonial) => (
+            <div className="text-center">
+              <h2 className="text-3xl font-semibold text-slate-900 sm:text-4xl">
+                What Members Are Saying
+              </h2>
+            </div>
+            <div className="mt-10">
+              {memberTestimonials.map((testimonial) => (
                 <div
                   key={testimonial.author}
-                  className="rounded-2xl border border-white/70 bg-white/80 p-6 shadow-soft backdrop-blur"
+                  className="mx-auto max-w-3xl rounded-3xl border border-white/70 bg-white/80 p-8 shadow-soft backdrop-blur sm:p-10"
                 >
-                  <p className="text-sm text-slate-600">
-                    “{testimonial.quote}”
-                  </p>
-                  <p className="mt-4 text-sm font-semibold text-slate-900">
+                  <div className="space-y-4 text-base leading-relaxed text-slate-600 sm:text-lg">
+                    {testimonial.quote.split("\n\n").map((paragraph) => (
+                      <p key={paragraph}>“{paragraph}”</p>
+                    ))}
+                  </div>
+                  <p className="mt-6 text-sm font-semibold text-slate-900">
                     {testimonial.author}
                   </p>
                 </div>
               ))}
             </div>
             <p className="mt-6 text-center text-xs text-slate-500">
-              Quotes shown are illustrative examples of how users may describe
-              the platform. Individual experiences may vary.
+              Testimonials reflect individual experiences and do not guarantee
+              future outcomes.
+            </p>
+          </Container>
+        </section>
+
+        <section className="py-20">
+          <Container>
+            <SectionHeading
+              eyebrow="Workflow example"
+              title="Example Trade Workflow"
+              description="Illustrative example of how trade ideas are tracked from entry to exit for educational and informational purposes."
+              align="center"
+            />
+            <div className="mt-10 overflow-hidden rounded-3xl border border-white/70 bg-white shadow-soft">
+              <div className="overflow-x-auto">
+                <table className="w-full text-left text-sm text-slate-600">
+                  <thead className="bg-slate-50 text-xs uppercase tracking-[0.12em] text-slate-500">
+                    <tr>
+                      <th className="px-6 py-4 font-semibold">Symbol</th>
+                      <th className="px-6 py-4 font-semibold">Entry Date</th>
+                      <th className="px-6 py-4 font-semibold">Result</th>
+                      <th className="px-6 py-4 font-semibold">Entry</th>
+                      <th className="px-6 py-4 font-semibold">Exit</th>
+                      <th className="px-6 py-4 font-semibold">Outcome</th>
+                      <th className="px-6 py-4 font-semibold">Exit Date</th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-slate-100">
+                    {tradeWorkflowExamples.map((row) => (
+                      <tr key={`${row.symbol}-${row.entryDate}`}>
+                        <td className="px-6 py-4 font-semibold text-slate-900">
+                          {row.symbol}
+                        </td>
+                        <td className="px-6 py-4">{row.entryDate}</td>
+                        <td className="px-6 py-4">
+                          <span
+                            className={`inline-flex rounded-full px-3 py-1 text-xs font-semibold ${
+                              row.result === "Target hit"
+                                ? "bg-emerald-50 text-emerald-700"
+                                : row.result === "Stop hit"
+                                  ? "bg-rose-50 text-rose-700"
+                                  : "bg-slate-100 text-slate-600"
+                            }`}
+                          >
+                            {row.result}
+                          </span>
+                        </td>
+                        <td className="px-6 py-4">{row.entry}</td>
+                        <td className="px-6 py-4">{row.exit}</td>
+                        <td className="px-6 py-4">{row.outcome}</td>
+                        <td className="px-6 py-4">{row.exitDate}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <p className="mt-4 text-center text-xs text-slate-500">
+              This table is a sample workflow for demonstration purposes only.
+              It is not a performance record and should not be interpreted as
+              actual or expected results.
             </p>
           </Container>
         </section>
