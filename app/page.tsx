@@ -2,6 +2,8 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { useMemo } from "react";
+import { useSearchParams } from "next/navigation";
 import { Container } from "@/components/Container";
 import { SectionHeading } from "@/components/SectionHeading";
 
@@ -181,6 +183,25 @@ const pricingDetails = [
 ];
 
 export default function Home() {
+  const searchParams = useSearchParams();
+  const marketingParams = useMemo(
+    () => searchParams.toString(),
+    [searchParams]
+  );
+  const buildThankYouUrl = (nextUrl: string) => {
+    const baseUrl = `/thank-you?next=${encodeURIComponent(nextUrl)}`;
+
+    return marketingParams ? `${baseUrl}&${marketingParams}` : baseUrl;
+  };
+  const thankYouTrialUrl = useMemo(
+    () => buildThankYouUrl(CHECKOUT_LINKS.trial),
+    [marketingParams]
+  );
+  const thankYouBundleUrl = useMemo(
+    () => buildThankYouUrl(CHECKOUT_LINKS.bundle),
+    [marketingParams]
+  );
+
   return (
     <div className="bg-gradient-to-br from-indigo-50 via-white to-rose-50 text-slate-900">
       <header className="sticky top-0 z-50 border-b border-white/60 bg-white/80 backdrop-blur">
@@ -189,7 +210,7 @@ export default function Home() {
             Strategy Fundamentals
           </div>
           <Link
-            href={CHECKOUT_LINKS.trial}
+            href={thankYouTrialUrl}
             className="rounded-full bg-gradient-to-r from-indigo-600 via-fuchsia-600 to-rose-500 px-4 py-2 text-sm font-semibold text-white shadow-soft transition hover:from-indigo-700 hover:via-fuchsia-600 hover:to-rose-600"
           >
             {CTA_LABEL}
@@ -226,7 +247,7 @@ export default function Home() {
               </p>
               <div className="mt-8 flex flex-wrap gap-4">
                 <Link
-                  href={CHECKOUT_LINKS.trial}
+                  href={thankYouTrialUrl}
                   className="rounded-full bg-gradient-to-r from-indigo-600 via-fuchsia-600 to-rose-500 px-7 py-3.5 text-sm font-semibold text-white shadow-soft transition hover:from-indigo-700 hover:via-fuchsia-600 hover:to-rose-600"
                 >
                   {CTA_LABEL}
@@ -257,7 +278,7 @@ export default function Home() {
                 </p>
                 <div className="mt-6 space-y-4">
                   <Link
-                    href={CHECKOUT_LINKS.trial}
+                    href={thankYouTrialUrl}
                     className="inline-flex w-full items-center justify-center rounded-full bg-gradient-to-r from-indigo-600 via-fuchsia-600 to-rose-500 px-7 py-3.5 text-sm font-semibold text-white shadow-soft transition hover:from-indigo-700 hover:via-fuchsia-600 hover:to-rose-600"
                   >
                     {CTA_LABEL}
@@ -629,7 +650,7 @@ export default function Home() {
                   ))}
                 </ul>
                 <Link
-                  href={CHECKOUT_LINKS.trial}
+                  href={thankYouTrialUrl}
                   className="mt-8 inline-flex w-full items-center justify-center rounded-full bg-gradient-to-r from-indigo-600 via-fuchsia-600 to-rose-500 px-7 py-3.5 text-sm font-semibold text-white shadow-soft transition hover:from-indigo-700 hover:via-fuchsia-600 hover:to-rose-600"
                 >
                   {CTA_LABEL}
@@ -698,13 +719,13 @@ export default function Home() {
                 </div>
                 <div className="flex flex-col gap-4">
                   <Link
-                    href={CHECKOUT_LINKS.bundle}
+                    href={thankYouBundleUrl}
                     className="inline-flex w-full items-center justify-center rounded-full bg-gradient-to-r from-indigo-600 via-fuchsia-600 to-rose-500 px-7 py-3.5 text-sm font-semibold text-white shadow-soft transition hover:from-indigo-700 hover:via-fuchsia-600 hover:to-rose-600"
                   >
                     {CTA_LABEL}
                   </Link>
                   <Link
-                    href={CHECKOUT_LINKS.trial}
+                    href={thankYouTrialUrl}
                     className="inline-flex w-full items-center justify-center rounded-full border border-indigo-200 bg-white/70 px-7 py-3.5 text-sm font-semibold text-indigo-700 transition hover:border-indigo-300 hover:text-indigo-800"
                   >
                     {CTA_LABEL}
