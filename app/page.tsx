@@ -1,9 +1,5 @@
-"use client";
-
 import Image from "next/image";
 import Link from "next/link";
-import { useMemo } from "react";
-import { useSearchParams } from "next/navigation";
 import { Container } from "@/components/Container";
 import { SectionHeading } from "@/components/SectionHeading";
 
@@ -182,25 +178,39 @@ const pricingDetails = [
   "Onboarding support"
 ];
 
-export default function Home() {
-  const searchParams = useSearchParams();
-  const marketingParams = useMemo(
-    () => searchParams.toString(),
-    [searchParams]
-  );
+const toSearchParams = (
+  params: Record<string, string | string[] | undefined>
+) => {
+  const search = new URLSearchParams();
+  Object.entries(params).forEach(([key, value]) => {
+    if (key === "next") return;
+    if (!value) return;
+    if (Array.isArray(value)) {
+      value.forEach((item) => {
+        search.append(key, item);
+      });
+      return;
+    }
+    search.append(key, value);
+  });
+  return search.toString();
+};
+
+export default function Home({
+  searchParams = {}
+}: {
+  searchParams?: Record<string, string | string[] | undefined>;
+}) {
+  const marketingParams = toSearchParams(searchParams);
+
   const buildThankYouUrl = (nextUrl: string) => {
     const baseUrl = `/thank-you?next=${encodeURIComponent(nextUrl)}`;
 
     return marketingParams ? `${baseUrl}&${marketingParams}` : baseUrl;
   };
-  const thankYouTrialUrl = useMemo(
-    () => buildThankYouUrl(CHECKOUT_LINKS.trial),
-    [marketingParams]
-  );
-  const thankYouBundleUrl = useMemo(
-    () => buildThankYouUrl(CHECKOUT_LINKS.bundle),
-    [marketingParams]
-  );
+
+  const thankYouTrialUrl = buildThankYouUrl(CHECKOUT_LINKS.trial);
+  const thankYouBundleUrl = buildThankYouUrl(CHECKOUT_LINKS.bundle);
 
   return (
     <div className="bg-gradient-to-br from-indigo-50 via-white to-rose-50 text-slate-900">
