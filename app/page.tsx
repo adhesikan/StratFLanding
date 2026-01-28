@@ -1,19 +1,13 @@
 import Image from "next/image";
-import Link from "next/link";
 import { Container } from "@/components/Container";
 import { SectionHeading } from "@/components/SectionHeading";
+import { RegistrationForm } from "@/components/RegistrationForm";
 
 const PRICING = {
   trialPrice: "$0 / 21 days"
 };
 
-const CHECKOUT_LINKS = {
-  trial: "https://www.strategyfundamentals.com/signup",
-  bundle: "https://www.strategyfundamentals.com/pricing"
-};
-
 const CTA_LABEL = "Start Free Trial";
-const CTA_SUPPORTING_COPY = "Preview Workflow First";
 const CTA_MICROCOPY = "No credit card required • Cancel anytime";
 const CTA_COMPLIANCE = "For informational purposes only. Not investment advice.";
 
@@ -203,15 +197,6 @@ export default function Home({
 }) {
   const marketingParams = toSearchParams(searchParams);
 
-  const buildThankYouUrl = (nextUrl: string) => {
-    const baseUrl = `/thank-you?next=${encodeURIComponent(nextUrl)}`;
-
-    return marketingParams ? `${baseUrl}&${marketingParams}` : baseUrl;
-  };
-
-  const thankYouTrialUrl = buildThankYouUrl(CHECKOUT_LINKS.trial);
-  const thankYouBundleUrl = buildThankYouUrl(CHECKOUT_LINKS.bundle);
-
   return (
     <div className="bg-gradient-to-br from-indigo-50 via-white to-rose-50 text-slate-900">
       <header className="sticky top-0 z-50 border-b border-white/60 bg-white/80 backdrop-blur">
@@ -219,12 +204,12 @@ export default function Home({
           <div className="text-xl font-semibold text-slate-900 sm:text-2xl">
             Strategy Fundamentals
           </div>
-          <Link
-            href={thankYouTrialUrl}
+          <a
+            href="#signup-form"
             className="rounded-full bg-gradient-to-r from-indigo-600 via-fuchsia-600 to-rose-500 px-4 py-2 text-sm font-semibold text-white shadow-soft transition hover:from-indigo-700 hover:via-fuchsia-600 hover:to-rose-600"
           >
             {CTA_LABEL}
-          </Link>
+          </a>
         </Container>
       </header>
 
@@ -256,12 +241,12 @@ export default function Home({
                 Past performance does not guarantee future results.
               </p>
               <div className="mt-8 flex flex-wrap gap-4">
-                <Link
-                  href={thankYouTrialUrl}
+                <a
+                  href="#signup-form"
                   className="rounded-full bg-gradient-to-r from-indigo-600 via-fuchsia-600 to-rose-500 px-7 py-3.5 text-sm font-semibold text-white shadow-soft transition hover:from-indigo-700 hover:via-fuchsia-600 hover:to-rose-600"
                 >
                   {CTA_LABEL}
-                </Link>
+                </a>
                 <a
                   href="#how-it-works"
                   className="rounded-full border border-white/70 bg-white/60 px-6 py-3.5 text-sm font-semibold text-slate-700 shadow-sm transition hover:border-indigo-200 hover:text-slate-900"
@@ -270,12 +255,11 @@ export default function Home({
                 </a>
               </div>
               <div className="mt-4 space-y-1 text-xs text-slate-500">
-                <p>{CTA_SUPPORTING_COPY}</p>
                 <p>{CTA_MICROCOPY}</p>
                 <p>{CTA_COMPLIANCE}</p>
               </div>
             </div>
-            <div className="rounded-3xl border border-white/70 bg-white/70 p-6 shadow-soft backdrop-blur">
+            <div id="signup-form" className="scroll-mt-24 rounded-3xl border border-white/70 bg-white/70 p-6 shadow-soft backdrop-blur">
               <div className="rounded-2xl border border-white/70 bg-white p-5 shadow-sm">
                 <p className="text-sm font-semibold uppercase tracking-[0.2em] text-accent-600">
                   Free trial access
@@ -284,20 +268,10 @@ export default function Home({
                   Get 21 days of trade ideas for $0.
                 </h2>
                 <p className="mt-2 text-sm text-slate-600">
-                  Unlock the dashboard instantly. No credit card required.
+                  Create your account to unlock the dashboard instantly.
                 </p>
-                <div className="mt-6 space-y-4">
-                  <Link
-                    href={thankYouTrialUrl}
-                    className="inline-flex w-full items-center justify-center rounded-full bg-gradient-to-r from-indigo-600 via-fuchsia-600 to-rose-500 px-7 py-3.5 text-sm font-semibold text-white shadow-soft transition hover:from-indigo-700 hover:via-fuchsia-600 hover:to-rose-600"
-                  >
-                    {CTA_LABEL}
-                  </Link>
-                  <div className="space-y-1 text-xs text-slate-500">
-                    <p>{CTA_SUPPORTING_COPY}</p>
-                    <p>{CTA_MICROCOPY}</p>
-                    <p>{CTA_COMPLIANCE}</p>
-                  </div>
+                <div className="mt-6">
+                  <RegistrationForm marketingParams={marketingParams} />
                 </div>
                 <p className="mt-4 text-xs text-slate-500">
                   By starting, you agree to receive onboarding updates. Cancel
@@ -659,14 +633,13 @@ export default function Home({
                     </li>
                   ))}
                 </ul>
-                <Link
-                  href={thankYouTrialUrl}
+                <a
+                  href="#signup-form"
                   className="mt-8 inline-flex w-full items-center justify-center rounded-full bg-gradient-to-r from-indigo-600 via-fuchsia-600 to-rose-500 px-7 py-3.5 text-sm font-semibold text-white shadow-soft transition hover:from-indigo-700 hover:via-fuchsia-600 hover:to-rose-600"
                 >
                   {CTA_LABEL}
-                </Link>
+                </a>
                 <div className="mt-3 space-y-1 text-xs text-slate-500">
-                  <p>{CTA_SUPPORTING_COPY}</p>
                   <p>{CTA_MICROCOPY}</p>
                   <p>{CTA_COMPLIANCE}</p>
                 </div>
@@ -728,20 +701,13 @@ export default function Home({
                   </ul>
                 </div>
                 <div className="flex flex-col gap-4">
-                  <Link
-                    href={thankYouBundleUrl}
+                  <a
+                    href="#signup-form"
                     className="inline-flex w-full items-center justify-center rounded-full bg-gradient-to-r from-indigo-600 via-fuchsia-600 to-rose-500 px-7 py-3.5 text-sm font-semibold text-white shadow-soft transition hover:from-indigo-700 hover:via-fuchsia-600 hover:to-rose-600"
                   >
                     {CTA_LABEL}
-                  </Link>
-                  <Link
-                    href={thankYouTrialUrl}
-                    className="inline-flex w-full items-center justify-center rounded-full border border-indigo-200 bg-white/70 px-7 py-3.5 text-sm font-semibold text-indigo-700 transition hover:border-indigo-300 hover:text-indigo-800"
-                  >
-                    {CTA_LABEL}
-                  </Link>
+                  </a>
                   <div className="space-y-1 text-xs text-slate-500">
-                    <p>{CTA_SUPPORTING_COPY}</p>
                     <p>{CTA_MICROCOPY}</p>
                     <p>{CTA_COMPLIANCE}</p>
                   </div>
