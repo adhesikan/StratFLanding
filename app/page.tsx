@@ -183,6 +183,7 @@ const toSearchParams = (
 ) => {
   const search = new URLSearchParams();
   Object.entries(params).forEach(([key, value]) => {
+    if (key === "next") return;
     if (!value) return;
     if (Array.isArray(value)) {
       value.forEach((item) => {
