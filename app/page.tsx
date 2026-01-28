@@ -202,11 +202,13 @@ export default function Home({
   searchParams?: Record<string, string | string[] | undefined>;
 }) {
   const marketingParams = toSearchParams(searchParams);
+
   const buildThankYouUrl = (nextUrl: string) => {
     const baseUrl = `/thank-you?next=${encodeURIComponent(nextUrl)}`;
 
     return marketingParams ? `${baseUrl}&${marketingParams}` : baseUrl;
   };
+
   const thankYouTrialUrl = buildThankYouUrl(CHECKOUT_LINKS.trial);
   const thankYouBundleUrl = buildThankYouUrl(CHECKOUT_LINKS.bundle);
 
