@@ -209,6 +209,10 @@ export default function ThankYouClient({
     });
   };
 
+  // Check if error is about trial already used
+  const isTrialAlreadyUsed = registrationError?.toLowerCase().includes("trial") && 
+    (registrationError?.toLowerCase().includes("already") || registrationError?.toLowerCase().includes("started"));
+
   // Error state
   if (registrationError) {
     return (
@@ -236,18 +240,29 @@ export default function ThankYouClient({
             Strategy Fundamentals
           </p>
           <h1 className="mt-4 text-3xl font-semibold text-slate-900 sm:text-4xl">
-            Something went wrong
+            {isTrialAlreadyUsed ? "Trial Already Used" : "Something went wrong"}
           </h1>
           <p className="mt-4 text-base text-slate-600">
-            {registrationError}
+            {isTrialAlreadyUsed 
+              ? "It looks like a free trial has already been started from this device. Ready to unlock full access?"
+              : registrationError}
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <button
-              onClick={handleRetry}
-              className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-indigo-600 via-fuchsia-600 to-rose-500 px-8 py-3 text-sm font-semibold text-white shadow-soft transition hover:from-indigo-700 hover:via-fuchsia-600 hover:to-rose-600"
-            >
-              Try Again
-            </button>
+            {isTrialAlreadyUsed ? (
+              <a
+                href="https://www.strategyfundamentals.com/subscribe"
+                className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-indigo-600 via-fuchsia-600 to-rose-500 px-8 py-3 text-sm font-semibold text-white shadow-soft transition hover:from-indigo-700 hover:via-fuchsia-600 hover:to-rose-600"
+              >
+                Subscribe Now
+              </a>
+            ) : (
+              <button
+                onClick={handleRetry}
+                className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-indigo-600 via-fuchsia-600 to-rose-500 px-8 py-3 text-sm font-semibold text-white shadow-soft transition hover:from-indigo-700 hover:via-fuchsia-600 hover:to-rose-600"
+              >
+                Try Again
+              </button>
+            )}
             <a
               href="/"
               className="inline-flex items-center justify-center rounded-full border border-slate-300 bg-white px-8 py-3 text-sm font-semibold text-slate-700 transition hover:border-slate-400 hover:text-slate-900"
