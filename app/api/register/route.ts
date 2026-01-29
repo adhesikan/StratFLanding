@@ -1,17 +1,10 @@
 import { NextResponse } from "next/server";
 
-const EXTERNAL_API_URL = process.env.STRATEGY_FUNDAMENTALS_API_URL || "https://www.strategyfundamentals.com";
-const EXTERNAL_API_KEY = process.env.EXTERNAL_REGISTRATION_API_KEY;
+const EXTERNAL_API_URL = "https://www.strategyfundamentals.com";
+const EXTERNAL_API_KEY = "Ef8ZNmHaC1Zq87b5HNLdOb2puROkoVV7";
 
 export async function POST(request: Request) {
   try {
-    // Check if API key is configured
-    if (!EXTERNAL_API_KEY) {
-      return NextResponse.json(
-        { error: "External registration not configured" },
-        { status: 503 }
-      );
-    }
 
     const body = await request.json();
     const { email, password, disclaimerAccepted } = body as {
