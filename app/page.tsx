@@ -4,7 +4,7 @@ import { SectionHeading } from "@/components/SectionHeading";
 import { RegistrationForm } from "@/components/RegistrationForm";
 
 const PRICING = {
-  trialPrice: "$0 / 21 days"
+  trialPrice: "$0 / 14 days"
 };
 
 const CTA_LABEL = "Start Free Trial";
@@ -265,7 +265,7 @@ export default function Home({
                   Free trial access
                 </p>
                 <h2 className="mt-3 text-2xl font-semibold text-slate-900">
-                  Get 21 days of trade ideas for $0.
+                  Get 14 days of trade ideas for $0.
                 </h2>
                 <p className="mt-2 text-sm text-slate-600">
                   Create your account to unlock the dashboard instantly.
